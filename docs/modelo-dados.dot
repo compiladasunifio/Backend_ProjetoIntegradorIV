@@ -1,0 +1,61 @@
+digraph UniFood {
+  graph [rankdir=LR, fontname="Helvetica", bgcolor="white", pad=0.4, nodesep=0.6, ranksep=1.1, label="UniFood — Diagrama de classes (entidades JPA)", labelloc=t, fontsize=20];
+  node  [shape=plain, fontname="Helvetica", fontsize=12];
+  edge  [fontname="Helvetica", fontsize=11, arrowhead=none, color="#555555"];
+
+  Categoria [label=<
+    <table border="0" cellborder="1" cellspacing="0" cellpadding="6">
+      <tr><td bgcolor="#2E7D32"><font color="white"><b>Categoria</b></font></td></tr>
+      <tr><td align="left">id: Short «PK»<br align="left"/>nome: String «único»<br align="left"/>descricao: String<br align="left"/></td></tr>
+    </table>>];
+
+  Vendedor [label=<
+    <table border="0" cellborder="1" cellspacing="0" cellpadding="6">
+      <tr><td bgcolor="#E65100"><font color="white"><b>Vendedor</b></font></td></tr>
+      <tr><td align="left">id: Integer «PK»<br align="left"/>nome: String<br align="left"/>email: String «único»<br align="left"/>telefone: String<br align="left"/>nomeNegocio: String<br align="left"/>localizacao: String<br align="left"/></td></tr>
+    </table>>];
+
+  Produto [label=<
+    <table border="0" cellborder="1" cellspacing="0" cellpadding="6">
+      <tr><td bgcolor="#E65100"><font color="white"><b>Produto</b></font></td></tr>
+      <tr><td align="left">id: Integer «PK»<br align="left"/>nome: String<br align="left"/>descricao: String<br align="left"/>preco: BigDecimal<br align="left"/>imagemUrl: String<br align="left"/>disponivel: Boolean<br align="left"/>localizacao: String<br align="left"/>vendedor: Vendedor «FK»<br align="left"/>categoria: Categoria «FK»<br align="left"/></td></tr>
+    </table>>];
+
+  Avaliacao [label=<
+    <table border="0" cellborder="1" cellspacing="0" cellpadding="6">
+      <tr><td bgcolor="#E65100"><font color="white"><b>Avaliacao</b></font></td></tr>
+      <tr><td align="left">id: Integer «PK»<br align="left"/>autorNome: String<br align="left"/>nota: Short (1 a 5)<br align="left"/>comentario: String<br align="left"/>data: LocalDate<br align="left"/>produto: Produto «FK»<br align="left"/></td></tr>
+    </table>>];
+
+  HorarioAtendimento [label=<
+    <table border="0" cellborder="1" cellspacing="0" cellpadding="6">
+      <tr><td bgcolor="#E65100"><font color="white"><b>HorarioAtendimento</b></font></td></tr>
+      <tr><td align="left">id: Integer «PK»<br align="left"/>dia: DiaSemana<br align="left"/>inicio: LocalTime<br align="left"/>fim: LocalTime<br align="left"/>local: String<br align="left"/>vendedor: Vendedor «FK»<br align="left"/></td></tr>
+    </table>>];
+
+  Encomenda [label=<
+    <table border="0" cellborder="1" cellspacing="0" cellpadding="6">
+      <tr><td bgcolor="#2E7D32"><font color="white"><b>Encomenda</b></font></td></tr>
+      <tr><td align="left">id: Integer «PK»<br align="left"/>clienteNome: String<br align="left"/>clienteTelefone: String<br align="left"/>quantidade: Short (1 a 20)<br align="left"/>dataRetirada: LocalDate<br align="left"/>horaRetirada: LocalTime<br align="left"/>observacao: String<br align="left"/>status: StatusEncomenda<br align="left"/>valorTotal: BigDecimal<br align="left"/>dataCriacao: LocalDateTime<br align="left"/>produto: Produto «FK»<br align="left"/></td></tr>
+    </table>>];
+
+  DiaSemana [label=<
+    <table border="0" cellborder="1" cellspacing="0" cellpadding="5">
+      <tr><td bgcolor="#546E7A"><font color="white"><b>«enum» DiaSemana</b></font></td></tr>
+      <tr><td align="left">SEGUNDA, TERCA, QUARTA,<br align="left"/>QUINTA, SEXTA, SABADO<br align="left"/></td></tr>
+    </table>>];
+
+  StatusEncomenda [label=<
+    <table border="0" cellborder="1" cellspacing="0" cellpadding="5">
+      <tr><td bgcolor="#546E7A"><font color="white"><b>«enum» StatusEncomenda</b></font></td></tr>
+      <tr><td align="left">PENDENTE, CONFIRMADA,<br align="left"/>ENTREGUE, CANCELADA<br align="left"/></td></tr>
+    </table>>];
+
+  Vendedor -> Produto            [taillabel="1", headlabel="0..*", label="vende"];
+  Vendedor -> HorarioAtendimento [taillabel="1", headlabel="0..*", label="atende em"];
+  Categoria -> Produto           [taillabel="1", headlabel="0..*", label="classifica"];
+  Produto -> Avaliacao           [taillabel="1", headlabel="0..*", label="recebe"];
+  Produto -> Encomenda           [taillabel="1", headlabel="0..*", label="é encomendado em"];
+  HorarioAtendimento -> DiaSemana [style=dashed, arrowhead=vee];
+  Encomenda -> StatusEncomenda    [style=dashed, arrowhead=vee];
+}

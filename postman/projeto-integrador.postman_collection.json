@@ -1,0 +1,3547 @@
+{
+  "info": {
+    "name": "UniFood - Projeto Integrador IV (Backend)",
+    "description": "Testes manuais da API do UniFood. Rode as pastas em ordem logo após subir a aplicação (o banco é recriado a cada execução). Os ids das variáveis novo*/nova* são os gerados pela pasta 01. dataRetirada deve ser uma segunda-feira futura e dataRetiradaDomingo um domingo futuro.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "01 - Criação de registros",
+      "description": "",
+      "item": [
+        {
+          "name": "Criar categoria (ADMIN) - 201",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/categorias",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "categorias"
+              ]
+            },
+            "description": "",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{adminUsuario}}",
+                  "type": "string"
+                },
+                {
+                  "key": "password",
+                  "value": "{{adminSenha}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"Cafés\",\n  \"descricao\": \"Cafés, cappuccinos e chocolates quentes\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Criar vendedor (VENDEDOR) - 201",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/vendedores",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "vendedores"
+              ]
+            },
+            "description": "",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{vendedorUsuario}}",
+                  "type": "string"
+                },
+                {
+                  "key": "password",
+                  "value": "{{vendedorSenha}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"Ana\",\n  \"email\": \"ana@unifood.com\",\n  \"telefone\": \"14997776655\",\n  \"nomeNegocio\": \"Café da Ana\",\n  \"localizacao\": \"Bloco 3\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Criar produto sem localização (usa a do vendedor) - 201",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/produtos",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "produtos"
+              ]
+            },
+            "description": "Sem \"localizacao\": o serviço preenche com a localização do vendedor (Bloco 3).",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{vendedorUsuario}}",
+                  "type": "string"
+                },
+                {
+                  "key": "password",
+                  "value": "{{vendedorSenha}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"Cappuccino\",\n  \"descricao\": \"Copo de 300 ml\",\n  \"preco\": 8.5,\n  \"imagemUrl\": \"\",\n  \"disponivel\": true,\n  \"vendedor\": {\n    \"id\": {{novoVendedorId}}\n  },\n  \"categoria\": {\n    \"id\": {{novaCategoriaId}}\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Criar horário de atendimento (VENDEDOR) - 201",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/horarios",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "horarios"
+              ]
+            },
+            "description": "",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{vendedorUsuario}}",
+                  "type": "string"
+                },
+                {
+                  "key": "password",
+                  "value": "{{vendedorSenha}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"dia\": \"TERCA\",\n  \"inicio\": \"07:30\",\n  \"fim\": \"09:30\",\n  \"local\": \"Bloco 3\",\n  \"vendedor\": {\n    \"id\": {{novoVendedorId}}\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Criar avaliação (CLIENTE) - 201",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/avaliacoes",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "avaliacoes"
+              ]
+            },
+            "description": "",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{clienteUsuario}}",
+                  "type": "string"
+                },
+                {
+                  "key": "password",
+                  "value": "{{clienteSenha}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"autorNome\": \"Beatriz\",\n  \"nota\": 5,\n  \"comentario\": \"Chegou quentinho!\",\n  \"produto\": {\n    \"id\": 1\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Criar encomenda (CLIENTE) - 201",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/encomendas",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "encomendas"
+              ]
+            },
+            "description": "Status PENDENTE e valorTotal (2 x 12,00 = 24,00) calculados pelo servidor. {{dataRetirada}} deve ser uma segunda-feira futura.",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{clienteUsuario}}",
+                  "type": "string"
+                },
+                {
+                  "key": "password",
+                  "value": "{{clienteSenha}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"clienteNome\": \"Beatriz\",\n  \"clienteTelefone\": \"14991234567\",\n  \"quantidade\": 2,\n  \"dataRetirada\": \"{{dataRetirada}}\",\n  \"horaRetirada\": \"10:30\",\n  \"observacao\": \"Sabores sortidos\",\n  \"produto\": {\n    \"id\": 1\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "02 - Consulta de registros",
+      "description": "",
+      "item": [
+        {
+          "name": "Listar categorias",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/categorias",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "categorias"
+              ]
+            },
+            "description": "",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{clienteUsuario}}",
+                  "type": "string"
+                },
+                {
+                  "key": "password",
+                  "value": "{{clienteSenha}}",
+                  "type": "string"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Buscar categoria por id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/categorias/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "categorias",
+                "1"
+              ]
+            },
+            "description": "",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{clienteUsuario}}",
+                  "type": "string"
+                },
+                {
+                  "key": "password",
+                  "value": "{{clienteSenha}}",
+                  "type": "string"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Listar vendedores",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/vendedores",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "vendedores"
+              ]
+            },
+            "description": "",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{clienteUsuario}}",
+                  "type": "string"
+                },
+                {
+                  "key": "password",
+                  "value": "{{clienteSenha}}",
+                  "type": "string"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Buscar vendedor por id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/vendedores/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "vendedores",
+                "1"
+              ]
+            },
+            "description": "",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{clienteUsuario}}",
+                  "type": "string"
+                },
+                {
+                  "key": "password",
+                  "value": "{{clienteSenha}}",
+                  "type": "string"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Listar produtos",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/produtos",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "produtos"
+              ]
+            },
+            "description": "",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{clienteUsuario}}",
+                  "type": "string"
+                },
+                {
+                  "key": "password",
+                  "value": "{{clienteSenha}}",
+                  "type": "string"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Buscar produto por id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/produtos/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "produtos",
+                "1"
+              ]
+            },
+            "description": "",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{clienteUsuario}}",
+                  "type": "string"
+                },
+                {
+                  "key": "password",
+                  "value": "{{clienteSenha}}",
+                  "type": "string"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Listar avaliações",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/avaliacoes",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "avaliacoes"
+              ]
+            },
+            "description": "",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{clienteUsuario}}",
+                  "type": "string"
+                },
+                {
+                  "key": "password",
+                  "value": "{{clienteSenha}}",
+                  "type": "string"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Buscar avaliação por id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/avaliacoes/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "avaliacoes",
+                "1"
+              ]
+            },
+            "description": "",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{clienteUsuario}}",
+                  "type": "string"
+                },
+                {
+                  "key": "password",
+                  "value": "{{clienteSenha}}",
+                  "type": "string"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Listar horários",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/horarios",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "horarios"
+              ]
+            },
+            "description": "",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{clienteUsuario}}",
+                  "type": "string"
+                },
+                {
+                  "key": "password",
+                  "value": "{{clienteSenha}}",
+                  "type": "string"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Buscar horário por id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/horarios/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "horarios",
+                "1"
+              ]
+            },
+            "description": "",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{clienteUsuario}}",
+                  "type": "string"
+                },
+                {
+                  "key": "password",
+                  "value": "{{clienteSenha}}",
+                  "type": "string"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Listar encomendas",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/encomendas",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "encomendas"
+              ]
+            },
+            "description": "",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{clienteUsuario}}",
+                  "type": "string"
+                },
+                {
+                  "key": "password",
+                  "value": "{{clienteSenha}}",
+                  "type": "string"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Buscar encomenda por id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/encomendas/2",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "encomendas",
+                "2"
+              ]
+            },
+            "description": "",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{clienteUsuario}}",
+                  "type": "string"
+                },
+                {
+                  "key": "password",
+                  "value": "{{clienteSenha}}",
+                  "type": "string"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "03 - Atualização de registros",
+      "description": "",
+      "item": [
+        {
+          "name": "Atualizar categoria (ADMIN)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/categorias/{{novaCategoriaId}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "categorias",
+                "{{novaCategoriaId}}"
+              ]
+            },
+            "description": "",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{adminUsuario}}",
+                  "type": "string"
+                },
+                {
+                  "key": "password",
+                  "value": "{{adminSenha}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"Cafeteria\",\n  \"descricao\": \"Cafés e bebidas quentes\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Atualizar vendedor (VENDEDOR)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/vendedores/{{novoVendedorId}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "vendedores",
+                "{{novoVendedorId}}"
+              ]
+            },
+            "description": "",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{vendedorUsuario}}",
+                  "type": "string"
+                },
+                {
+                  "key": "password",
+                  "value": "{{vendedorSenha}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"Ana\",\n  \"email\": \"ana@unifood.com\",\n  \"telefone\": \"14997770000\",\n  \"nomeNegocio\": \"Cafeteria da Ana\",\n  \"localizacao\": \"Bloco 3\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Atualizar produto (VENDEDOR)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/produtos/{{novoProdutoId}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "produtos",
+                "{{novoProdutoId}}"
+              ]
+            },
+            "description": "",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{vendedorUsuario}}",
+                  "type": "string"
+                },
+                {
+                  "key": "password",
+                  "value": "{{vendedorSenha}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"Cappuccino cremoso\",\n  \"descricao\": \"Copo de 400 ml\",\n  \"preco\": 9.9,\n  \"imagemUrl\": \"\",\n  \"disponivel\": true,\n  \"localizacao\": \"Bloco 3 - cantina\",\n  \"vendedor\": {\n    \"id\": {{novoVendedorId}}\n  },\n  \"categoria\": {\n    \"id\": {{novaCategoriaId}}\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Marcar produto como indisponível (PATCH)",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/produtos/{{novoProdutoId}}/disponibilidade?disponivel=false",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "produtos",
+                "{{novoProdutoId}}",
+                "disponibilidade"
+              ],
+              "query": [
+                {
+                  "key": "disponivel",
+                  "value": "false"
+                }
+              ]
+            },
+            "description": "",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{vendedorUsuario}}",
+                  "type": "string"
+                },
+                {
+                  "key": "password",
+                  "value": "{{vendedorSenha}}",
+                  "type": "string"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Marcar produto como disponível (PATCH)",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/produtos/{{novoProdutoId}}/disponibilidade?disponivel=true",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "produtos",
+                "{{novoProdutoId}}",
+                "disponibilidade"
+              ],
+              "query": [
+                {
+                  "key": "disponivel",
+                  "value": "true"
+                }
+              ]
+            },
+            "description": "",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{vendedorUsuario}}",
+                  "type": "string"
+                },
+                {
+                  "key": "password",
+                  "value": "{{vendedorSenha}}",
+                  "type": "string"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Atualizar horário (VENDEDOR)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/horarios/{{novoHorarioId}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "horarios",
+                "{{novoHorarioId}}"
+              ]
+            },
+            "description": "",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{vendedorUsuario}}",
+                  "type": "string"
+                },
+                {
+                  "key": "password",
+                  "value": "{{vendedorSenha}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"dia\": \"TERCA\",\n  \"inicio\": \"07:00\",\n  \"fim\": \"10:00\",\n  \"local\": \"Bloco 3\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Atualizar avaliação (CLIENTE)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/avaliacoes/{{novaAvaliacaoId}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "avaliacoes",
+                "{{novaAvaliacaoId}}"
+              ]
+            },
+            "description": "",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{clienteUsuario}}",
+                  "type": "string"
+                },
+                {
+                  "key": "password",
+                  "value": "{{clienteSenha}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"autorNome\": \"Beatriz\",\n  \"nota\": 4,\n  \"comentario\": \"Muito bom, mas acabou rápido.\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Atualizar encomenda pendente (CLIENTE)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/encomendas/{{novaEncomendaId}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "encomendas",
+                "{{novaEncomendaId}}"
+              ]
+            },
+            "description": "O valorTotal é recalculado (3 x 12,00 = 36,00).",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{clienteUsuario}}",
+                  "type": "string"
+                },
+                {
+                  "key": "password",
+                  "value": "{{clienteSenha}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"clienteNome\": \"Beatriz\",\n  \"clienteTelefone\": \"14991234567\",\n  \"quantidade\": 3,\n  \"dataRetirada\": \"{{dataRetirada}}\",\n  \"horaRetirada\": \"11:30\",\n  \"observacao\": \"Agora são 3 caixas\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "04 - Exclusão de registros",
+      "description": "",
+      "item": [
+        {
+          "name": "Excluir avaliação (CLIENTE) - 204",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/avaliacoes/{{novaAvaliacaoId}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "avaliacoes",
+                "{{novaAvaliacaoId}}"
+              ]
+            },
+            "description": "",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{clienteUsuario}}",
+                  "type": "string"
+                },
+                {
+                  "key": "password",
+                  "value": "{{clienteSenha}}",
+                  "type": "string"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Excluir horário (VENDEDOR) - 204",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/horarios/{{novoHorarioId}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "horarios",
+                "{{novoHorarioId}}"
+              ]
+            },
+            "description": "",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{vendedorUsuario}}",
+                  "type": "string"
+                },
+                {
+                  "key": "password",
+                  "value": "{{vendedorSenha}}",
+                  "type": "string"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Excluir categoria sem produtos (ADMIN) - 204",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/categorias/5",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "categorias",
+                "5"
+              ]
+            },
+            "description": "",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{adminUsuario}}",
+                  "type": "string"
+                },
+                {
+                  "key": "password",
+                  "value": "{{adminSenha}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "Categoria 5 (Lanches naturais) não tem produtos.",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Excluir produto sem encomendas em aberto (VENDEDOR) - 204",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/produtos/6",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "produtos",
+                "6"
+              ]
+            },
+            "description": "",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{vendedorUsuario}}",
+                  "type": "string"
+                },
+                {
+                  "key": "password",
+                  "value": "{{vendedorSenha}}",
+                  "type": "string"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Excluir encomenda entregue (ADMIN) - 204",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/encomendas/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "encomendas",
+                "1"
+              ]
+            },
+            "description": "",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{adminUsuario}}",
+                  "type": "string"
+                },
+                {
+                  "key": "password",
+                  "value": "{{adminSenha}}",
+                  "type": "string"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Excluir vendedor com produtos e horários (ADMIN) - 204",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/vendedores/2",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "vendedores",
+                "2"
+              ]
+            },
+            "description": "",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{adminUsuario}}",
+                  "type": "string"
+                },
+                {
+                  "key": "password",
+                  "value": "{{adminSenha}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "Apaga junto o produto, as avaliações e os horários do Bruno.",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "05 - Consultas personalizadas",
+      "description": "",
+      "item": [
+        {
+          "name": "Produtos disponíveis (catálogo)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/produtos/disponiveis",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "produtos",
+                "disponiveis"
+              ]
+            },
+            "description": "",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{clienteUsuario}}",
+                  "type": "string"
+                },
+                {
+                  "key": "password",
+                  "value": "{{clienteSenha}}",
+                  "type": "string"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Buscar produtos por nome",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/produtos/busca?nome=bri",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "produtos",
+                "busca"
+              ],
+              "query": [
+                {
+                  "key": "nome",
+                  "value": "bri"
+                }
+              ]
+            },
+            "description": "",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{clienteUsuario}}",
+                  "type": "string"
+                },
+                {
+                  "key": "password",
+                  "value": "{{clienteSenha}}",
+                  "type": "string"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Produtos disponíveis por faixa de preço (JPQL)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/produtos/faixa-preco?minimo=5&maximo=12",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "produtos",
+                "faixa-preco"
+              ],
+              "query": [
+                {
+                  "key": "minimo",
+                  "value": "5"
+                },
+                {
+                  "key": "maximo",
+                  "value": "12"
+                }
+              ]
+            },
+            "description": "",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{clienteUsuario}}",
+                  "type": "string"
+                },
+                {
+                  "key": "password",
+                  "value": "{{clienteSenha}}",
+                  "type": "string"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Buscar vendedores pelo nome do negócio",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/vendedores/busca?negocio=doces",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "vendedores",
+                "busca"
+              ],
+              "query": [
+                {
+                  "key": "negocio",
+                  "value": "doces"
+                }
+              ]
+            },
+            "description": "",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{clienteUsuario}}",
+                  "type": "string"
+                },
+                {
+                  "key": "password",
+                  "value": "{{clienteSenha}}",
+                  "type": "string"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Produtos de um vendedor",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/vendedores/1/produtos",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "vendedores",
+                "1",
+                "produtos"
+              ]
+            },
+            "description": "",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{clienteUsuario}}",
+                  "type": "string"
+                },
+                {
+                  "key": "password",
+                  "value": "{{clienteSenha}}",
+                  "type": "string"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Produtos de uma categoria",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/categorias/1/produtos",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "categorias",
+                "1",
+                "produtos"
+              ]
+            },
+            "description": "",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{clienteUsuario}}",
+                  "type": "string"
+                },
+                {
+                  "key": "password",
+                  "value": "{{clienteSenha}}",
+                  "type": "string"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Horários de um vendedor (ordem da semana)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/vendedores/1/horarios",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "vendedores",
+                "1",
+                "horarios"
+              ]
+            },
+            "description": "",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{clienteUsuario}}",
+                  "type": "string"
+                },
+                {
+                  "key": "password",
+                  "value": "{{clienteSenha}}",
+                  "type": "string"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Avaliações de um produto",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/produtos/1/avaliacoes",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "produtos",
+                "1",
+                "avaliacoes"
+              ]
+            },
+            "description": "",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{clienteUsuario}}",
+                  "type": "string"
+                },
+                {
+                  "key": "password",
+                  "value": "{{clienteSenha}}",
+                  "type": "string"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Encomendas por status",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/encomendas/status/PENDENTE",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "encomendas",
+                "status",
+                "PENDENTE"
+              ]
+            },
+            "description": "",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{clienteUsuario}}",
+                  "type": "string"
+                },
+                {
+                  "key": "password",
+                  "value": "{{clienteSenha}}",
+                  "type": "string"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "06 - Regras de negócio (409)",
+      "description": "",
+      "item": [
+        {
+          "name": "Categoria com nome repetido - 409",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/categorias",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "categorias"
+              ]
+            },
+            "description": "",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{adminUsuario}}",
+                  "type": "string"
+                },
+                {
+                  "key": "password",
+                  "value": "{{adminSenha}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"doces\",\n  \"descricao\": \"Repetida\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Vendedor com e-mail repetido - 409",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/vendedores",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "vendedores"
+              ]
+            },
+            "description": "",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{vendedorUsuario}}",
+                  "type": "string"
+                },
+                {
+                  "key": "password",
+                  "value": "{{vendedorSenha}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"Ana\",\n  \"email\": \"ISA@unifood.com\",\n  \"telefone\": \"14997776655\",\n  \"nomeNegocio\": \"Café da Ana\",\n  \"localizacao\": \"Bloco 3\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Horário sobreposto ao existente - 409",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/horarios",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "horarios"
+              ]
+            },
+            "description": "A Isa já atende segunda das 10:00 às 12:00.",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{vendedorUsuario}}",
+                  "type": "string"
+                },
+                {
+                  "key": "password",
+                  "value": "{{vendedorSenha}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"dia\": \"SEGUNDA\",\n  \"inicio\": \"11:00\",\n  \"fim\": \"13:00\",\n  \"local\": \"Bloco 5\",\n  \"vendedor\": {\n    \"id\": 1\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Encomenda de produto indisponível - 409",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/encomendas",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "encomendas"
+              ]
+            },
+            "description": "A coxinha (produto 3) está indisponível.",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{clienteUsuario}}",
+                  "type": "string"
+                },
+                {
+                  "key": "password",
+                  "value": "{{clienteSenha}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"clienteNome\": \"Beatriz\",\n  \"clienteTelefone\": \"14991234567\",\n  \"quantidade\": 1,\n  \"dataRetirada\": \"{{dataRetirada}}\",\n  \"horaRetirada\": \"10:30\",\n  \"produto\": {\n    \"id\": 3\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Encomenda fora do horário de atendimento - 409",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/encomendas",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "encomendas"
+              ]
+            },
+            "description": "",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{clienteUsuario}}",
+                  "type": "string"
+                },
+                {
+                  "key": "password",
+                  "value": "{{clienteSenha}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"clienteNome\": \"Beatriz\",\n  \"clienteTelefone\": \"14991234567\",\n  \"quantidade\": 1,\n  \"dataRetirada\": \"{{dataRetirada}}\",\n  \"horaRetirada\": \"15:00\",\n  \"produto\": {\n    \"id\": 1\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Encomenda para domingo - 409",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/encomendas",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "encomendas"
+              ]
+            },
+            "description": "",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{clienteUsuario}}",
+                  "type": "string"
+                },
+                {
+                  "key": "password",
+                  "value": "{{clienteSenha}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"clienteNome\": \"Beatriz\",\n  \"clienteTelefone\": \"14991234567\",\n  \"quantidade\": 1,\n  \"dataRetirada\": \"{{dataRetiradaDomingo}}\",\n  \"horaRetirada\": \"10:30\",\n  \"produto\": {\n    \"id\": 1\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Entregar encomenda ainda pendente - 409",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/encomendas/2/entregar",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "encomendas",
+                "2",
+                "entregar"
+              ]
+            },
+            "description": "O fluxo exige PENDENTE -> CONFIRMADA -> ENTREGUE.",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{vendedorUsuario}}",
+                  "type": "string"
+                },
+                {
+                  "key": "password",
+                  "value": "{{vendedorSenha}}",
+                  "type": "string"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Editar encomenda já confirmada - 409",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/encomendas/3",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "encomendas",
+                "3"
+              ]
+            },
+            "description": "",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{clienteUsuario}}",
+                  "type": "string"
+                },
+                {
+                  "key": "password",
+                  "value": "{{clienteSenha}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"clienteNome\": \"Rafael\",\n  \"clienteTelefone\": \"14995556666\",\n  \"quantidade\": 1,\n  \"dataRetirada\": \"{{dataRetirada}}\",\n  \"horaRetirada\": \"12:00\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Excluir encomenda em aberto - 409",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/encomendas/2",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "encomendas",
+                "2"
+              ]
+            },
+            "description": "",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{adminUsuario}}",
+                  "type": "string"
+                },
+                {
+                  "key": "password",
+                  "value": "{{adminSenha}}",
+                  "type": "string"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Excluir categoria com produtos - 409",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/categorias/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "categorias",
+                "1"
+              ]
+            },
+            "description": "",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{adminUsuario}}",
+                  "type": "string"
+                },
+                {
+                  "key": "password",
+                  "value": "{{adminSenha}}",
+                  "type": "string"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Excluir produto com encomendas em aberto - 409",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/produtos/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "produtos",
+                "1"
+              ]
+            },
+            "description": "",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{vendedorUsuario}}",
+                  "type": "string"
+                },
+                {
+                  "key": "password",
+                  "value": "{{vendedorSenha}}",
+                  "type": "string"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Excluir vendedor com encomendas em aberto - 409",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/vendedores/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "vendedores",
+                "1"
+              ]
+            },
+            "description": "",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{adminUsuario}}",
+                  "type": "string"
+                },
+                {
+                  "key": "password",
+                  "value": "{{adminSenha}}",
+                  "type": "string"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "07 - Validação de dados inválidos (400)",
+      "description": "",
+      "item": [
+        {
+          "name": "Vendedor com campos inválidos - 400",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/vendedores",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "vendedores"
+              ]
+            },
+            "description": "",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{vendedorUsuario}}",
+                  "type": "string"
+                },
+                {
+                  "key": "password",
+                  "value": "{{vendedorSenha}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"\",\n  \"email\": \"email-invalido\",\n  \"telefone\": \"123\",\n  \"nomeNegocio\": \"\",\n  \"localizacao\": \"\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Produto sem preço e sem vendedor - 400",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/produtos",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "produtos"
+              ]
+            },
+            "description": "",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{vendedorUsuario}}",
+                  "type": "string"
+                },
+                {
+                  "key": "password",
+                  "value": "{{vendedorSenha}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"Produto sem preço\",\n  \"categoria\": {\n    \"id\": 1\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Avaliação com nota 7 - 400",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/avaliacoes",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "avaliacoes"
+              ]
+            },
+            "description": "",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{clienteUsuario}}",
+                  "type": "string"
+                },
+                {
+                  "key": "password",
+                  "value": "{{clienteSenha}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"autorNome\": \"Beatriz\",\n  \"nota\": 7,\n  \"comentario\": \"Nota fora da faixa\",\n  \"produto\": {\n    \"id\": 1\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Horário com fim antes do início - 400",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/horarios",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "horarios"
+              ]
+            },
+            "description": "",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{vendedorUsuario}}",
+                  "type": "string"
+                },
+                {
+                  "key": "password",
+                  "value": "{{vendedorSenha}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"dia\": \"SEXTA\",\n  \"inicio\": \"14:00\",\n  \"fim\": \"12:00\",\n  \"local\": \"Bloco 5\",\n  \"vendedor\": {\n    \"id\": 1\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Horário com dia inexistente - 400",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/horarios",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "horarios"
+              ]
+            },
+            "description": "",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{vendedorUsuario}}",
+                  "type": "string"
+                },
+                {
+                  "key": "password",
+                  "value": "{{vendedorSenha}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"dia\": \"DOMINGO\",\n  \"inicio\": \"10:00\",\n  \"fim\": \"12:00\",\n  \"local\": \"Bloco 5\",\n  \"vendedor\": {\n    \"id\": 1\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Encomenda com data no passado e quantidade 0 - 400",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/encomendas",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "encomendas"
+              ]
+            },
+            "description": "",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{clienteUsuario}}",
+                  "type": "string"
+                },
+                {
+                  "key": "password",
+                  "value": "{{clienteSenha}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"clienteNome\": \"Beatriz\",\n  \"clienteTelefone\": \"14991234567\",\n  \"quantidade\": 0,\n  \"dataRetirada\": \"2020-01-06\",\n  \"horaRetirada\": \"10:30\",\n  \"produto\": {\n    \"id\": 1\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "JSON mal formatado - 400",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/categorias",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "categorias"
+              ]
+            },
+            "description": "",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{adminUsuario}}",
+                  "type": "string"
+                },
+                {
+                  "key": "password",
+                  "value": "{{adminSenha}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{ \"nome\": \"Sem fechar\" ",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Id com formato inválido - 400",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/produtos/abc",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "produtos",
+                "abc"
+              ]
+            },
+            "description": "",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{clienteUsuario}}",
+                  "type": "string"
+                },
+                {
+                  "key": "password",
+                  "value": "{{clienteSenha}}",
+                  "type": "string"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "08 - Recursos inexistentes (404)",
+      "description": "",
+      "item": [
+        {
+          "name": "Produto inexistente - 404",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/produtos/999",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "produtos",
+                "999"
+              ]
+            },
+            "description": "",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{clienteUsuario}}",
+                  "type": "string"
+                },
+                {
+                  "key": "password",
+                  "value": "{{clienteSenha}}",
+                  "type": "string"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Vendedor inexistente - 404",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/vendedores/999",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "vendedores",
+                "999"
+              ]
+            },
+            "description": "",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{clienteUsuario}}",
+                  "type": "string"
+                },
+                {
+                  "key": "password",
+                  "value": "{{clienteSenha}}",
+                  "type": "string"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Atualizar categoria inexistente - 404",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/categorias/999",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "categorias",
+                "999"
+              ]
+            },
+            "description": "",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{adminUsuario}}",
+                  "type": "string"
+                },
+                {
+                  "key": "password",
+                  "value": "{{adminSenha}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"Nada\",\n  \"descricao\": \"Nada\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Excluir encomenda inexistente - 404",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/encomendas/999",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "encomendas",
+                "999"
+              ]
+            },
+            "description": "",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{adminUsuario}}",
+                  "type": "string"
+                },
+                {
+                  "key": "password",
+                  "value": "{{adminSenha}}",
+                  "type": "string"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Produto com vendedor inexistente - 404",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/produtos",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "produtos"
+              ]
+            },
+            "description": "",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{vendedorUsuario}}",
+                  "type": "string"
+                },
+                {
+                  "key": "password",
+                  "value": "{{vendedorSenha}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"Produto órfão\",\n  \"preco\": 5,\n  \"disponivel\": true,\n  \"vendedor\": {\n    \"id\": 999\n  },\n  \"categoria\": {\n    \"id\": 1\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Avaliações de produto inexistente - 404",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/produtos/999/avaliacoes",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "produtos",
+                "999",
+                "avaliacoes"
+              ]
+            },
+            "description": "",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{clienteUsuario}}",
+                  "type": "string"
+                },
+                {
+                  "key": "password",
+                  "value": "{{clienteSenha}}",
+                  "type": "string"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "09 - Login com credenciais válidas (200)",
+      "description": "",
+      "item": [
+        {
+          "name": "Login como ADMIN",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/produtos",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "produtos"
+              ]
+            },
+            "description": "",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{adminUsuario}}",
+                  "type": "string"
+                },
+                {
+                  "key": "password",
+                  "value": "{{adminSenha}}",
+                  "type": "string"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Login como VENDEDOR",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/produtos",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "produtos"
+              ]
+            },
+            "description": "",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{vendedorUsuario}}",
+                  "type": "string"
+                },
+                {
+                  "key": "password",
+                  "value": "{{vendedorSenha}}",
+                  "type": "string"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Login como CLIENTE",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/produtos",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "produtos"
+              ]
+            },
+            "description": "",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{clienteUsuario}}",
+                  "type": "string"
+                },
+                {
+                  "key": "password",
+                  "value": "{{clienteSenha}}",
+                  "type": "string"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "10 - Acesso sem autenticação (401)",
+      "description": "",
+      "item": [
+        {
+          "name": "Sem credenciais - 401",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/produtos",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "produtos"
+              ]
+            },
+            "description": "",
+            "auth": {
+              "type": "noauth"
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Senha incorreta - 401",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/produtos",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "produtos"
+              ]
+            },
+            "description": "",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{adminUsuario}}",
+                  "type": "string"
+                },
+                {
+                  "key": "password",
+                  "value": "senha-errada",
+                  "type": "string"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "11 - Acesso sem permissão suficiente (403)",
+      "description": "",
+      "item": [
+        {
+          "name": "CLIENTE tenta criar produto - 403",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/produtos",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "produtos"
+              ]
+            },
+            "description": "",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{clienteUsuario}}",
+                  "type": "string"
+                },
+                {
+                  "key": "password",
+                  "value": "{{clienteSenha}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"Teste\",\n  \"preco\": 5,\n  \"disponivel\": true,\n  \"vendedor\": {\n    \"id\": 1\n  },\n  \"categoria\": {\n    \"id\": 1\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "VENDEDOR tenta criar categoria - 403",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/categorias",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "categorias"
+              ]
+            },
+            "description": "",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{vendedorUsuario}}",
+                  "type": "string"
+                },
+                {
+                  "key": "password",
+                  "value": "{{vendedorSenha}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"Teste\",\n  \"descricao\": \"Teste\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "VENDEDOR tenta excluir vendedor - 403",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/vendedores/4",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "vendedores",
+                "4"
+              ]
+            },
+            "description": "",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{vendedorUsuario}}",
+                  "type": "string"
+                },
+                {
+                  "key": "password",
+                  "value": "{{vendedorSenha}}",
+                  "type": "string"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "CLIENTE tenta ver o painel do vendedor - 403",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/vendedores/1/painel",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "vendedores",
+                "1",
+                "painel"
+              ]
+            },
+            "description": "",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{clienteUsuario}}",
+                  "type": "string"
+                },
+                {
+                  "key": "password",
+                  "value": "{{clienteSenha}}",
+                  "type": "string"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "CLIENTE tenta confirmar encomenda - 403",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/encomendas/2/confirmar",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "encomendas",
+                "2",
+                "confirmar"
+              ]
+            },
+            "description": "",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{clienteUsuario}}",
+                  "type": "string"
+                },
+                {
+                  "key": "password",
+                  "value": "{{clienteSenha}}",
+                  "type": "string"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "VENDEDOR tenta criar avaliação - 403",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/avaliacoes",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "avaliacoes"
+              ]
+            },
+            "description": "",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{vendedorUsuario}}",
+                  "type": "string"
+                },
+                {
+                  "key": "password",
+                  "value": "{{vendedorSenha}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"autorNome\": \"Isa\",\n  \"nota\": 5,\n  \"comentario\": \"Autoavaliação\",\n  \"produto\": {\n    \"id\": 1\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "12 - Funcionalidade do PI: encomendas e painel do vendedor",
+      "description": "",
+      "item": [
+        {
+          "name": "1. Cliente faz encomenda - 201 PENDENTE",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/encomendas",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "encomendas"
+              ]
+            },
+            "description": "Bolo de pote (10,00) da Isa, segunda às 11:00 (ela atende das 10:00 às 12:00). valorTotal = 40,00.",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{clienteUsuario}}",
+                  "type": "string"
+                },
+                {
+                  "key": "password",
+                  "value": "{{clienteSenha}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"clienteNome\": \"Gustavo\",\n  \"clienteTelefone\": \"14998887766\",\n  \"quantidade\": 4,\n  \"dataRetirada\": \"{{dataRetirada}}\",\n  \"horaRetirada\": \"11:00\",\n  \"observacao\": \"Para o aniversário da turma\",\n  \"produto\": {\n    \"id\": 5\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "2. Vendedor vê a agenda de retiradas",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/vendedores/1/encomendas",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "vendedores",
+                "1",
+                "encomendas"
+              ]
+            },
+            "description": "",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{vendedorUsuario}}",
+                  "type": "string"
+                },
+                {
+                  "key": "password",
+                  "value": "{{vendedorSenha}}",
+                  "type": "string"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "3. Vendedor confirma a encomenda - CONFIRMADA",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/encomendas/{{encomendaFluxoId}}/confirmar",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "encomendas",
+                "{{encomendaFluxoId}}",
+                "confirmar"
+              ]
+            },
+            "description": "",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{vendedorUsuario}}",
+                  "type": "string"
+                },
+                {
+                  "key": "password",
+                  "value": "{{vendedorSenha}}",
+                  "type": "string"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "4. Vendedor entrega a encomenda - ENTREGUE",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/encomendas/{{encomendaFluxoId}}/entregar",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "encomendas",
+                "{{encomendaFluxoId}}",
+                "entregar"
+              ]
+            },
+            "description": "",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{vendedorUsuario}}",
+                  "type": "string"
+                },
+                {
+                  "key": "password",
+                  "value": "{{vendedorSenha}}",
+                  "type": "string"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "5. Encomenda entregue não pode ser cancelada - 409",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/encomendas/{{encomendaFluxoId}}/cancelar",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "encomendas",
+                "{{encomendaFluxoId}}",
+                "cancelar"
+              ]
+            },
+            "description": "",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{clienteUsuario}}",
+                  "type": "string"
+                },
+                {
+                  "key": "password",
+                  "value": "{{clienteSenha}}",
+                  "type": "string"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "6. Cliente cancela outra encomenda pendente - CANCELADA",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/encomendas/2/cancelar",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "encomendas",
+                "2",
+                "cancelar"
+              ]
+            },
+            "description": "",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{clienteUsuario}}",
+                  "type": "string"
+                },
+                {
+                  "key": "password",
+                  "value": "{{clienteSenha}}",
+                  "type": "string"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "7. Painel do vendedor (indicadores do negócio)",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/vendedores/1/painel",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "vendedores",
+                "1",
+                "painel"
+              ]
+            },
+            "description": "",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{vendedorUsuario}}",
+                  "type": "string"
+                },
+                {
+                  "key": "password",
+                  "value": "{{vendedorSenha}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "Produtos disponíveis, nota média, avaliações, horas de atendimento por semana, encomendas por status e faturamento das entregues.",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8080",
+      "type": "string"
+    },
+    {
+      "key": "adminUsuario",
+      "value": "admin",
+      "type": "string"
+    },
+    {
+      "key": "adminSenha",
+      "value": "admin123",
+      "type": "string"
+    },
+    {
+      "key": "vendedorUsuario",
+      "value": "vendedor",
+      "type": "string"
+    },
+    {
+      "key": "vendedorSenha",
+      "value": "vendedor123",
+      "type": "string"
+    },
+    {
+      "key": "clienteUsuario",
+      "value": "cliente",
+      "type": "string"
+    },
+    {
+      "key": "clienteSenha",
+      "value": "cliente123",
+      "type": "string"
+    },
+    {
+      "key": "dataRetirada",
+      "value": "2026-12-07",
+      "type": "string"
+    },
+    {
+      "key": "dataRetiradaDomingo",
+      "value": "2026-12-06",
+      "type": "string"
+    },
+    {
+      "key": "novaCategoriaId",
+      "value": "6",
+      "type": "string"
+    },
+    {
+      "key": "novoVendedorId",
+      "value": "5",
+      "type": "string"
+    },
+    {
+      "key": "novoProdutoId",
+      "value": "7",
+      "type": "string"
+    },
+    {
+      "key": "novoHorarioId",
+      "value": "7",
+      "type": "string"
+    },
+    {
+      "key": "novaAvaliacaoId",
+      "value": "5",
+      "type": "string"
+    },
+    {
+      "key": "novaEncomendaId",
+      "value": "4",
+      "type": "string"
+    },
+    {
+      "key": "encomendaFluxoId",
+      "value": "5",
+      "type": "string"
+    }
+  ]
+}
