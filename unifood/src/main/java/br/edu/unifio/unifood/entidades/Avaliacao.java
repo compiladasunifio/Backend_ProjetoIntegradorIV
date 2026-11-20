@@ -47,7 +47,7 @@ public class Avaliacao {
     @Column (nullable = false)
     private LocalDate data;
 
-    @NotNull (message = "O produto é obrigatório")
+    // Obrigatório só no cadastro (conferido no serviço): na edição o produto não muda e não precisa ser enviado
     @ManyToOne (optional = false)
     private Produto produto;
 }

@@ -44,7 +44,7 @@ public class HorarioAtendimentoServico {
     @Transactional
     public HorarioAtendimento salvar (HorarioAtendimento horario) {
         horario.setId(null);
-        if (horario.getVendedor().getId() == null) {
+        if (horario.getVendedor() == null || horario.getVendedor().getId() == null) {
             throw new RequisicaoInvalidaExcecao("Informe o id do vendedor. Ex.: \"vendedor\": {\"id\": 1}");
         }
         horario.setVendedor(vendedorServico.buscarPorId(horario.getVendedor().getId()));

@@ -47,7 +47,7 @@ public class HorarioAtendimento {
     @Column (nullable = false, length = 100)
     private String local;
 
-    @NotNull (message = "O vendedor é obrigatório")
+    // Obrigatório só no cadastro (conferido no serviço): na edição o vendedor não muda e não precisa ser enviado
     @ManyToOne (optional = false)
     private Vendedor vendedor;
 }

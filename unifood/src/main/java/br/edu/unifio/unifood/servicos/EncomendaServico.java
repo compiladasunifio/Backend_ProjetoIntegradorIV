@@ -58,7 +58,7 @@ public class EncomendaServico {
 
     @Transactional
     public Encomenda salvar (Encomenda encomenda) {
-        if (encomenda.getProduto().getId() == null) {
+        if (encomenda.getProduto() == null || encomenda.getProduto().getId() == null) {
             throw new RequisicaoInvalidaExcecao("Informe o id do produto. Ex.: \"produto\": {\"id\": 1}");
         }
         Produto produto = produtoServico.buscarPorId(encomenda.getProduto().getId());

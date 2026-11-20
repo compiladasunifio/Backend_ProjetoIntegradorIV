@@ -79,7 +79,7 @@ public class Encomenda {
     @Column (nullable = false)
     private LocalDateTime dataCriacao;
 
-    @NotNull (message = "O produto é obrigatório")
+    // Obrigatório só no cadastro (conferido no serviço): na edição o produto não muda e não precisa ser enviado
     @ManyToOne (optional = false)
     private Produto produto;
 }

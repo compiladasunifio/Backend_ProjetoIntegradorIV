@@ -38,7 +38,7 @@ public class AvaliacaoServico {
 
     @Transactional
     public Avaliacao salvar (Avaliacao avaliacao) {
-        if (avaliacao.getProduto().getId() == null) {
+        if (avaliacao.getProduto() == null || avaliacao.getProduto().getId() == null) {
             throw new RequisicaoInvalidaExcecao("Informe o id do produto. Ex.: \"produto\": {\"id\": 1}");
         }
         Produto produto = produtoServico.buscarPorId(avaliacao.getProduto().getId());
