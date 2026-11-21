@@ -93,10 +93,6 @@
                   "value": "no-cache"
                 },
                 {
-                  "key": "set-cookie",
-                  "value": ".Tunnels.Relay.WebForwarding.Cookies=CfDJ8NJJuTEdEi5KqensronCVW10RQPhkV7FWGYn5coMrTtifemHVUpcBDFPZRXCfarFW7QdircoiLJkXIcR6Wb6K_CmuYrWkKx-rD_5AinSZn9SQcaub-1fY3ORBtjAmgTshyuscjputvt_SvDAgqO8LhuexrmzzdeuVPjUMqQUByvpOh3U8Qu93liqLFgeoXA6H5lXicQ7FZoq3nsc9njLxijRXrWdndjoRFcQJnVVqkYPGKsh66GssKhMBRZVt1cDvEFAnCXG4gpV1EzrATtKuqSpqINMcuZgGd1cKSqwo7M3oFwW-VNEzuU0lzs1o0Idsj2p5GyKmMN2ZBGBhNKDYu3jVpnE5P-8NraBnJV1vynIvjACkDQlS1Q5bCfQtF1InKLDPABhyK9NGOvbpF0IeGRQELgAY3QO5DyAm9Rv3UAr5j_Z83h21BsTqp7rGAJjpcAATH4NkOdsQ-o5JDAQfS0QTu4Asb9DXAbvahA4HnUFnE7t9FodsctPGry2eY9uSTEq44H4hMXto0ZJsVaXJ5dqeT14FGEOU55uGMg7IPGwRBhlm52_XklM58gcQeX8SmSQQL3WVNcQDbvN5E4GEfO7ZV01DYGih6Ljp2D7LgDEMZBmlk4p0AM6mBhVW05_87VmK8vuY500MRYJYezIBXM8ModbPhnLw-c2d1Kqk8eJXMqmqjCfxVUPpAYmMahCgQipOlFPKl11tdWkNRwS2xuPzojyvqemm_Cj6a0fqwu0OhhswaqyB-UZEHrKlHjlEbPJVgNojwmaBmSwx38qh0_uzOGvTv7jrneKn0c2txewh6O7KNX5BVabmotklxAbIdpIjGCps4m9ChayGYI8_QDRhP9Yr5i6WkASe89qOdYckuYgM22dIJeVDbdla8OH_tPKygg4iU1KdIVj8ElL73TfPiQ0f28bzffl78Khj6Q6wJt6yxXox9XzDquUmPKv8mFSC6T62q9vpN_m2Xn8hDRISD4xW95Wez-ScRkzDqAr; path=/; secure; samesite=none; Partitioned"
-                },
-                {
                   "key": "x-content-type-options",
                   "value": "nosniff"
                 },
@@ -188,7 +184,9 @@
                   ],
                   "raw": "{{baseUrl}}/categorias"
                 }
-              }
+              },
+              "code": 201,
+              "status": "Created"
             }
           ]
         },
@@ -366,7 +364,9 @@
                   ],
                   "raw": "{{baseUrl}}/vendedores"
                 }
-              }
+              },
+              "code": 201,
+              "status": "Created"
             }
           ]
         },
@@ -545,7 +545,9 @@
                   ],
                   "raw": "{{baseUrl}}/produtos"
                 }
-              }
+              },
+              "code": 201,
+              "status": "Created"
             }
           ]
         },
@@ -723,7 +725,9 @@
                   ],
                   "raw": "{{baseUrl}}/horarios"
                 }
-              }
+              },
+              "code": 201,
+              "status": "Created"
             }
           ]
         },
@@ -808,10 +812,6 @@
                 {
                   "key": "pragma",
                   "value": "no-cache"
-                },
-                {
-                  "key": "set-cookie",
-                  "value": ".Tunnels.Relay.WebForwarding.Cookies=CfDJ8NJJuTEdEi5KqensronCVW3mIKAcn0yKzxVxIc2-2vF5Tk8RHI_rPifd4bZkA2W3lTmvWA1HVWG0YaknXEaB1LZCMmFJtWNh4isRXh6mLSqLBi_LMUP9gOzcQm1k5-fAw0jQUpk5PpES6n6Gx2pFv2moR-OTV9mhDFsaP58m9sKUne9b-_CEP8jJ1PbN1I-h3TQxSgRVEe5tqTmjNVHtNvb2qp3rq6JyEkj6hXj1A_0mQaxfuPhko2TSbdujsPV0EPdOvseldIte_OFdMPKNzruveifkdQ1CmzgGuxHKAWDL_IxsmCGV6s7zetk-Dx6PwzJBjxWwlDJExJCW4fovmI6TippoAPLRyQT6_axUVHYUYxjF-I_y_w3E1KArCGcoGAomSVy26cwPyslRmUXPBlT2y8TQ4DYt9DQIjPcLEtEhnzr2kBndi9JXmPrg9XulxmZCC791smZfrG6U3DB0u716KNukSMbyeSBmte7LPc2ARk-71s6_wauRH8dfeoHvMYvNKObjKVCiy57OGYB_An5L6exgV1pSooNcomhTXkCeALFq5V85WRbWuIDc9OxxyYU830LNv6X9p0ssUssVJ2UAvf5RR_PxJ1nKcKV0QbqR_aZtA1wklHLBS-cWfnkUa_AdhUi5-7uHXp8xdgVJ2A1Pk1ZWZCY9NahAbIBV75bI4mE4wfwYbHX70wJM5f2KLj1KNqY313UCD_7icFU-qYEGyanRtIjoV4nvGnqhpBDHYrLlCKQRTAXSyYBWmdpkdHkkPtWR7pV0vrH4huTcIvPDhLhDZdQyxaQA6EC3ROgfRZsg6ITcNIZ71MXxQh3zzbjQ8fCv5Qq2_KQgAIxBXrk4TlsfxOXgm6Syc6IwR_UZ4RYLtn5yZWmOF3Jka8KvNw-HpgwJOLSNUmczIcPCbiOnZgrTtoY2bcUJkBwQoqbstfSWwDHIkSSnIAFv3loqqfk49b-a-WukQXb_-lgIFvSp5a1sh-lNadLvbWG1YVYv; path=/; secure; samesite=none; Partitioned"
                 },
                 {
                   "key": "x-content-type-options",
@@ -905,7 +905,9 @@
                   ],
                   "raw": "{{baseUrl}}/avaliacoes"
                 }
-              }
+              },
+              "code": 201,
+              "status": "Created"
             }
           ]
         },
@@ -1084,7 +1086,9 @@
                   ],
                   "raw": "{{baseUrl}}/encomendas"
                 }
-              }
+              },
+              "code": 201,
+              "status": "Created"
             }
           ]
         }
@@ -1239,7 +1243,9 @@
                   ],
                   "raw": "{{baseUrl}}/categorias"
                 }
-              }
+              },
+              "code": 200,
+              "status": "OK"
             }
           ]
         },
@@ -1311,10 +1317,6 @@
                 {
                   "key": "pragma",
                   "value": "no-cache"
-                },
-                {
-                  "key": "set-cookie",
-                  "value": ".Tunnels.Relay.WebForwarding.Cookies=CfDJ8NJJuTEdEi5KqensronCVW2G3bXvxXcEQwI2oFeccJElq93B4zQL6anVz_Fa6LlHLat_QY5zKAOT4UChCHOnOKeXbZ1dRFaR6AhaGT1xwfJ3zYV86G0o4IYB2zlQrQQ0ExSl1hJqDmxcQbK4I9sJad9JON8s0SHF1clfZFHIklXCzLfbwmpdyQOsEqEv4lrY6rNLk-X2IU_uCwqfiETpyN5WlVG8WYJO8iCBQnlCF_yfWO6zCXWs48oWMIKeXLITNBOheThUhG2S2PK0PIyTLDtK8aYOMf_i0i3pkGZerAWjrYizb5nPy_jzAeLrulXkHO9_REw1R8T8mZ7QNArQNE2IjUSgI0S6YlpX9xj0LebxAfK4wrv5JjCnLkFOxCOnr3gSUOdZ0ACx7QVOjz3C_ZCMEECqBwM74ufF8OUtEXzQG53yw2yd7oDAOTzlJxaAjMQ9q3ANrRBLkFmmnwV8NehTGauCb3A62kFfPY14wvHrvQPjWiPihia967gqBWaRUyZi-acCdw6XFF7DmTeGYdWDkggR4AjsGr6THqC1P25nbkOHJOJ-HoftgKKs4zZKT9i7ktXsE2tkScYjBtvXwSIW2jJUUf_5gQRYG_5M9TY9W2qrf5IGgLX33WTeYkl2lgh8QK6Rbj_Eq3o0lXuAfiujHkex6MzTxsWiZko9dTe3EMYRKZoPROLLOgRlyMFC00noEElbEpP98EQxAFj4WFG1ERqAly2J98X6dFjYi_Iks9Tk-99pjbk9q38xOhPFFAujfRc6F4pVH-MHTlNbKZNmubzNbsKve2TCZZSDm3A0PADBgeF0rGH2iENDZTo_SCvnkEPC1a75TBaXXBK-m9KXwHRo64ILQgqkX2s-B77R9xKbCl4LJKfsDkHyfFodGfZQwktqqNVHK07LIy4x_drd6jFB3X8dj_Ah6vH0kMa14BrKqPGGY09c_xevgW4Zu3_oyQHnG2xK1s6oG1C_DiMWvqOVRqhAJcBDnBCdp0-X; path=/; secure; samesite=none; Partitioned"
                 },
                 {
                   "key": "x-content-type-options",
@@ -1395,7 +1397,9 @@
                   ],
                   "raw": "{{baseUrl}}/categorias/1"
                 }
-              }
+              },
+              "code": 200,
+              "status": "OK"
             }
           ]
         },
@@ -1545,7 +1549,9 @@
                   ],
                   "raw": "{{baseUrl}}/vendedores"
                 }
-              }
+              },
+              "code": 200,
+              "status": "OK"
             }
           ]
         },
@@ -1697,7 +1703,9 @@
                   ],
                   "raw": "{{baseUrl}}/vendedores/1"
                 }
-              }
+              },
+              "code": 200,
+              "status": "OK"
             }
           ]
         },
@@ -1847,7 +1855,9 @@
                   ],
                   "raw": "{{baseUrl}}/produtos"
                 }
-              }
+              },
+              "code": 200,
+              "status": "OK"
             }
           ]
         },
@@ -1919,10 +1929,6 @@
                 {
                   "key": "pragma",
                   "value": "no-cache"
-                },
-                {
-                  "key": "set-cookie",
-                  "value": ".Tunnels.Relay.WebForwarding.Cookies=CfDJ8NJJuTEdEi5KqensronCVW095oGnEGJ4MlDjLNhXt4SgmDGcrXCQ3cih7CZ40np26wYIBQIESpt0IyOZG24h3P11U_ouwptr_nZdyp0SrL_v0eRTM0dLD9Qv7D1MJKIxBuWFo1I2bNAF900q2lzmw-6rj_hzC_MC8nY-fqWnN6rCZu4BeMCoWMi6Cv8NL8d2WUfNmUhgtwddlU0X5pqgAhQ4SyMUpebnWW59syVZwLEEF8rtyIwrtEfBlSJ2fOZEbfeW5dZyE0pNHqatTxD8VgCFZHMqHSzCQltwT6k--ErZN6fPkKBT8A5FMYa0LNwiXWrXPprVtXX4vJlnVsMwZCcbtxH2GK0RKa0DQjzU8MmHJVbxLkOyquO5jeYMpjpkhY7zLIbZOWpFDP_MuimtNbj6dPDON8AOOLrPG9l4c-t7i8wbVjWfWPsdtKMkhl9vTxNSxKJ0TIz_uu6B1yAycloHBJXqjP_fjdAuwES8NhIys0SvDpbwqaOOunktmin6B-0m43r5hB_AmlTKFW_9ZLVpKdEJppov7kolXoJMHfaQg09nWlMuq3aSHSXluIcliEMBOoQGDS_SjSDAe7VYgBAkChORK0s63REG-v4F7gCQlOZvDqFmysG3tv9QMtTDbUipi56yPhqn8TTbwneg-_8SPFZo5NaxE0o5UtG_MYtKQ__QlIdLAP-qcgF7N4ATly2vCxePiOBtP9KX04U3VASl7Nz8Eh4njYnpZw_kOResTUYw8CZsavDWJ9tdmGmrqJfbsgQ_VrY_aeyLYMhaV0eJiKHjHNkzlIHFo4bR7jiwWj5DM_rF9bNYP-nromrtm9nfassNSBySUi1uOjlHEOEXehCvMKkkguoomZIKP6IwDGMiqMOywOuSwNuyJAgg7fVmLql5ayUaitiE58H5aZnWStMtcEBKqIuBZjByT6JJRxlMq5PtNkWeJbT-Z-eGBLdfyRhgu46vuPgCYEjR_OiJtPVSsXGggE_YZOCUFR5k; path=/; secure; samesite=none; Partitioned"
                 },
                 {
                   "key": "x-content-type-options",
@@ -2003,7 +2009,9 @@
                   ],
                   "raw": "{{baseUrl}}/produtos/1"
                 }
-              }
+              },
+              "code": 200,
+              "status": "OK"
             }
           ]
         },
@@ -2153,7 +2161,9 @@
                   ],
                   "raw": "{{baseUrl}}/avaliacoes"
                 }
-              }
+              },
+              "code": 200,
+              "status": "OK"
             }
           ]
         },
@@ -2305,7 +2315,9 @@
                   ],
                   "raw": "{{baseUrl}}/avaliacoes/1"
                 }
-              }
+              },
+              "code": 200,
+              "status": "OK"
             }
           ]
         },
@@ -2455,7 +2467,9 @@
                   ],
                   "raw": "{{baseUrl}}/horarios"
                 }
-              }
+              },
+              "code": 200,
+              "status": "OK"
             }
           ]
         },
@@ -2527,10 +2541,6 @@
                 {
                   "key": "pragma",
                   "value": "no-cache"
-                },
-                {
-                  "key": "set-cookie",
-                  "value": ".Tunnels.Relay.WebForwarding.Cookies=CfDJ8NJJuTEdEi5KqensronCVW305hsrJSamH1ORRXsg5xkPqt5wMEEkKJexFJjp7EezhTrPIQSYldv0Z9RnY8f_L7s-PdA2f3daGZogbUxmxpoS9SBf-dwZ-qhNyrhZkpFM8D0AqqtHATf31kK2MTHWepB4QVfizlwIH0HHHZNDdaYQXdbRY1d2iOoShPgA-zbrPatAM7cq1gNzUDaP4WJUl2DktKXxYbaFNn5tSq-J7o7gfxAkl3TiuZv3BT5Kk4T37qSeK7zATjnZtZ45HNBwk1DZmgGy_XotZy_T8KE5uLQ4v3ksM3cv4LcwVjGRLsRVExlOUqXiWzj9S-kEMVFT07AGeSVPnH0EvJTw1vsDpIN-30ts7l3J0OMubvRjQdRkem3ha3Ag7Bu7JhQ1I25KyJaaAlaAWnYFBdIxzYgUuyKFmoQIK7BtT_zdWiw5_EZY56-sl6DeDbtHtsy16ljeasg5wHXZbROFeu-aUDBci0hfrJ_HABQEwAIsCtA_MbnGI5UkxDCGtmTExCLbiCRS65L-tYFrCTmPFEPElFpcLyTEcOGN8dEMVtacvZ8tC3pCON2q6bAPMDizU8sFPHo7hFvQTopmR-T63QeDD3Ctihl3sgH0PMUQ6bahZWUTPfaJBDIzHXKqipHcZjA49lT7sJfJejifxTuIHrAFIfnJ2uPG_DP90-FRAw1DG6mEqspb9Bz4AoGCI8xA647Tps50pES9aw2XD4GSz5wY4wOhdgm1QNuvSaMp7rAf2k5K1mBbCUCCSQfmeJ7TzQBYDrj7HoBiI14OMGnwsbMOf-yxWNqtgouoylrSB1F5KNdfbj6coxbKWKSGOzzMYE3x-cXlhMK7bsQRgimzrHDtbCqu90Yf-qhgEZY6J5yRnRxl2B7sd07G8HWj1B3E-wDHVcehElBx3aZFXvOletEvw04xzZSqNHZaXYwyyqysItEPhOlKT_9HxBRVzZvGtg370cOtT5xn0Ja9lFT1ltyXJpI98zcF; path=/; secure; samesite=none; Partitioned"
                 },
                 {
                   "key": "x-content-type-options",
@@ -2611,7 +2621,9 @@
                   ],
                   "raw": "{{baseUrl}}/horarios/1"
                 }
-              }
+              },
+              "code": 200,
+              "status": "OK"
             }
           ]
         },
@@ -2761,7 +2773,9 @@
                   ],
                   "raw": "{{baseUrl}}/encomendas"
                 }
-              }
+              },
+              "code": 200,
+              "status": "OK"
             }
           ]
         },
@@ -2913,7 +2927,9 @@
                   ],
                   "raw": "{{baseUrl}}/encomendas/2"
                 }
-              }
+              },
+              "code": 200,
+              "status": "OK"
             }
           ]
         }
@@ -3004,10 +3020,6 @@
                 {
                   "key": "pragma",
                   "value": "no-cache"
-                },
-                {
-                  "key": "set-cookie",
-                  "value": ".Tunnels.Relay.WebForwarding.Cookies=CfDJ8NJJuTEdEi5KqensronCVW1xJwp6GG6Dt5mFGjhBWusQ87RhbcAB0x2FD1-QtVO3AySO3gflDLJHDJRdK6959kdRD3WfwRykPPM6qYU9tUGgpVRb2LIY1W07CSwGwXn2W9UCATkRO4DxcsWv1B9h5HNkTEkhUTWHecqcLU_s0mpAtkl__vKIOKVQBLheSRUaJVtK3N0DxlLDF3sfqJxjz9zAQz3MhTtuaRKp19vroytl0ijurvuXdZOAEhHFWm5LERMpX8EvruIIEqOqlQfKREqO_6d1BSd3jlX2ALaQ5p0CjG22nJI2A9mqdNBmECnlP-YLDcobkiDUk310NRwX2vbsy2Rsje8WxOqJnRzR2nN0Ck8nSwSKmjAnhNGetbD1_jXnpfj6IrmQiNzwKQk1Fl0K6kwRhRcXB_x_DBSgFZjGElL4PO8LWymomUnUtm8alpTv9BAHUJVocA8m0OKCYakkE-5q0Oju-7Ax83icwtJ3YERi4jIAoGEq8qyj7Llkg9McFvukj-huhqpIIko9TC26zC46PbPcyXCTq9EBN8IFsOCyG40iNiKggL75_JKdrX_98VF5KOaDRPtmc0DA-kRRLL87bk_qmWWvPKymP1M2wgvTK4mzoX0MWuoKs1Dldg1g4M_wmP3JGJWE8mF_MwIhd1bCrvfS9NTVMMcl299x_2AcNeUYWFJsF3aYxn44FBbFQLpkp7GSvdXpLtHZXBmDE9XmaizJQtLeEvo28qMgrWxCtlJFoMPdS3uMWgMmy-UBfXpOb3sD22gakTAQTO_g2PRYpJ7cy_XtTmCmtLq_sitaQeZEFTa2Vn1faSl61deF1uuUSAOzcOvpMHLfT-sGhzwrgmHVSCNDo6DhUjdNdvjcs6sgLreDf3a3kBQFCm7m_2roLAb5nv_iJlYuE19F4eQnGRMooP3tMHzyvlWPr8eNPvAAEOkDBBqJnddwuHFMmas1T2WH7LH1--SHNEAJ8xXUTVYJETOJDWeGoQXx; path=/; secure; samesite=none; Partitioned"
                 },
                 {
                   "key": "x-content-type-options",
@@ -3102,7 +3114,9 @@
                   ],
                   "raw": "{{baseUrl}}/categorias/{{novaCategoriaId}}"
                 }
-              }
+              },
+              "code": 200,
+              "status": "OK"
             }
           ]
         },
@@ -3282,7 +3296,9 @@
                   ],
                   "raw": "{{baseUrl}}/vendedores/{{novoVendedorId}}"
                 }
-              }
+              },
+              "code": 200,
+              "status": "OK"
             }
           ]
         },
@@ -3462,7 +3478,9 @@
                   ],
                   "raw": "{{baseUrl}}/produtos/{{novoProdutoId}}"
                 }
-              }
+              },
+              "code": 200,
+              "status": "OK"
             }
           ]
         },
@@ -3541,10 +3559,6 @@
                 {
                   "key": "pragma",
                   "value": "no-cache"
-                },
-                {
-                  "key": "set-cookie",
-                  "value": ".Tunnels.Relay.WebForwarding.Cookies=CfDJ8NJJuTEdEi5KqensronCVW3oG8AeW4JZ--JTflkB-T7GmWtVGWho0KlNgEv46tyqbvv4Qjta6Yk2zyasN_1M3wTTji0TUzd_2srfGQUGKHpLRTi2nIwq0pgythXxQ4dyhMTAi4a7SMcGgAZ_8FhI__nAPem_7xj7B0lL-OOWcAv3dWmM7le42jsMbhj6N1_brYHlDHlM9dYaNTh4u1nmzNT4Herdi5zJRfMXBkPB8oMet4duoqzwUP-YZKC2vE5i21fc1VhCA1d1qwKCKuiRMuzNUouBPpoon6kEum6DyKAxqS7P0MROfQH-trLxgPu_Y3VyzO4vF-bHDvI_WDt974t0n5OcDpN_cC5fScJa4-jtE2jrm2LSWdJ4A1Lgwh0yN9t8Xyb9yYJadsUvNfQMNRObWAgonTmO0GLPLG3FjbdQEpRgZZiwYHMvifdR3rQvEGeyv-5wZS_CFfyMcqAmc36fotgOblHJ-kFxS7id41TXKHnwTasEO34c2p_CWZGoU8TvLUase0tbk3CjrpfNSNqRBDrAIiCjdDul75Ufw7AbfzKRrWKBJUw5uEoSfldBF3iLR_6BkXoFktewZ0U-bKzKBN7s69duOEwz78cjqDWkncZTtr6Ae3zzMoWKH7ngOxsbZ-e0HqfZtoIDqFxUaZX0BmD1eWmZY2l-6pf_6i5mBAVihQcVcPyrBioUaR5oQBvgHRhKpLkXwN7WfPthQxcM0n-tLs2x_oFeMTTUTTs0RTcSMPeeTba8qifquiv_p0S1FeymWva21FyEfHyY0zOWUmmkfZi66cjwxirFjKSCeIcOcZdsax9PY4WvuYeCHIh-cgNSEe2v4O9zrVg_qreoaNSXW9t86sWF7BoiY4RAju87RUTn_5hIkVD1o795i411GUfESivC9c0IzQRwnmYyMluhi-bzxc6GtwQgOxkC5-A52ototOJzavbrLhpGaeTqSlRpM744tj5Ii8hhaLK34i5pLI4VDWnL7n7XwgFN; path=/; secure; samesite=none; Partitioned"
                 },
                 {
                   "key": "x-content-type-options",
@@ -3632,7 +3646,9 @@
                   ],
                   "raw": "{{baseUrl}}/produtos/{{novoProdutoId}}/disponibilidade?disponivel=false"
                 }
-              }
+              },
+              "code": 200,
+              "status": "OK"
             }
           ]
         },
@@ -3798,7 +3814,9 @@
                   ],
                   "raw": "{{baseUrl}}/produtos/{{novoProdutoId}}/disponibilidade?disponivel=true"
                 }
-              }
+              },
+              "code": 200,
+              "status": "OK"
             }
           ]
         },
@@ -3978,7 +3996,9 @@
                   ],
                   "raw": "{{baseUrl}}/horarios/{{novoHorarioId}}"
                 }
-              }
+              },
+              "code": 200,
+              "status": "OK"
             }
           ]
         },
@@ -4064,10 +4084,6 @@
                 {
                   "key": "pragma",
                   "value": "no-cache"
-                },
-                {
-                  "key": "set-cookie",
-                  "value": ".Tunnels.Relay.WebForwarding.Cookies=CfDJ8NJJuTEdEi5KqensronCVW05UUWr-7Y8MvEnztw92IoWybwT_pDiFJakBa1u66hmA6JJGdB5qrSqpMhTd67fRU0q6yFX2UFo-_nmqDAdYieNWGrmutNylty4FK47g0oGyvnQkmnv99Ybswd0nBkEfMqukjZLxlhDx6jKrqdXl8_q31jCgQ9Jrebh7qXEhP2CPZd_Dsckxg3CZP89zpFrZRbAPTTp1zSpF-q1JIRjx5QJ4D2PlK9CChAnBaJMfPe1QLTvPNOD6i8NegpLHXhQQyCDaVJsj6AVNG8SCwU3BJSmvwKzVR0mMRsbjaARMY2l9MsZbSJV2MkH_EH9naG6GUs8CZlU78g_7RjHfRZ7VotfOMrI1O91Rzi3nbfuTgoUlr40QHxrgVTX8taTbRKV_JAFTjc1OJciF2KLXikjRRmFGE_MuWBo71sLxio5uNrKSA7xSEML9RxGKPZcgMcw-XtdKWewFy8vmC9QY5MRf3hQzOARDVa1E8enXVn3AReHWxI0qZ5r94qG9GibfhaFFJ-O9YBFlogYCJv6K9Veakv_sWotD7ab2aJ64Etp2vVRym47dK61FM-Z0hVWTKeKlm1v2h_v1Ou-PpkYEpvceSTkumUvLQE9s3_cKBup2vUFILzdrE-s52NpYinyYsN8myFDyl1m3ptKS7kkz2c4xhK_afvrD2Ap_IZ4nVIa4PPxxeZSYjyVkFRdiSjkjg1qXeCmdc0DmGjYsIMyRwGChYAC6BfrMqa0c1n0ADIz_Qtv_5upeTsXDYmbNnFZ-1B0dlF7-wqkahYu8h01IrB5vCygzaX8aBaluWqmcJpwN3oeuAkuLzILKn5VymkuQYlRxUJ_vLvVmdsYH9MQFR_oXgrNzqn-6DHQXsuzpGurQ9X5h6ijhS_onDpQHQwkHLM5fNJqjHIBVw1g1JtGertzZcDLc2rxYQT3bvjc0X12XezUPprLu0o2Friw1aAZFkaB4qp-YZIBHnqau_eOy8Su7B0p; path=/; secure; samesite=none; Partitioned"
                 },
                 {
                   "key": "x-content-type-options",
@@ -4162,7 +4178,9 @@
                   ],
                   "raw": "{{baseUrl}}/avaliacoes/{{novaAvaliacaoId}}"
                 }
-              }
+              },
+              "code": 200,
+              "status": "OK"
             }
           ]
         },
@@ -4343,7 +4361,9 @@
                   ],
                   "raw": "{{baseUrl}}/encomendas/{{novaEncomendaId}}"
                 }
-              }
+              },
+              "code": 200,
+              "status": "OK"
             }
           ]
         }
@@ -4492,7 +4512,9 @@
                   ],
                   "raw": "{{baseUrl}}/avaliacoes/{{novaAvaliacaoId}}"
                 }
-              }
+              },
+              "code": 204,
+              "status": "No Content"
             }
           ]
         },
@@ -4556,10 +4578,6 @@
                 {
                   "key": "pragma",
                   "value": "no-cache"
-                },
-                {
-                  "key": "set-cookie",
-                  "value": ".Tunnels.Relay.WebForwarding.Cookies=CfDJ8NJJuTEdEi5KqensronCVW28ydbCXCttjkzU6Fe--JWgSd6l0HTkRIWvDlHiV1sL3V3y2PgwOmT9Gh7OYfGrdduFIabIkzfNQDiVGgDgwloOfX9hDBs7xfJn595fWyLYMbmS4KoclQSHIdmt_OyWTZxV6F6j6yKMQF3ttjkqGQgKek4SFtaX1WHGIsyG16YGsWGbKu_3gs1LBYQRXVRnwuYSMcFUJw7lQRFUY3LnZOcPn_OkD1vvY8V1FhukOWmtznq913z-4bpVLrwkxYNEyiB_C6pkQTGrTOGNPV-s3_-HH0j1PPQtcl60Nihut4fMMaOdrvQUE5z9zL7KgsJJy6uCZhvyY7nS1iG7e9yFLSGIwFRiK5s8WRnOycfU7to1Jo_GSCBIQFHgje3hcfVKRIIzwO8BI3gVwP-1dJKZtUA-YaQpzFji7rUHKJAqO5vG1cu1huN1bA77ifAs7BdJ5nCVX_OJgrdzY9jrvzlSdbb981IxfpFv6jnN5RQgY36orpmQQR30v4b1e1Id5lJWEMYZ6kK0k-Fs0tc2XXAQe_1Cl-hG9Mi1gFgcaL1fwFY5yLj8IJgtYI1OVq3r2mFSSm6ZTI1ROybwE7KJx_oo3sSB5n75BoB2SrewAN--uloOzCbaYzp7DbH2oUXzCUZ8i4QV1cKvrJVo0V6Fb33YpSnlb4UJG6FdGA9R4_MCMNu6P9bLe-hkyOGQtjKvMtfpMOyUyWm4bZxIonfrcgqkRcBrZf7JOsSQEXLp7i76WRbi5KnQTdOYqa2gdFwtITTu53ex53E5zSkQsDIPjR69ZIGv5PiroFC1pfR-yekdnpFcJ8LNzWMKruWjneM9q7sDMGP0ESFG4_3NapTdK7lTH5lvs83gdpz2gXjSCJ8iDo5OEoaoA1FmsWUCJgtt05czfXah_E-0k-HaRrb4FuMjbSSmNF7agFUeR8y9U7M2ygNUCfjzqpdA5aaT3e9glaROviBjui_Ul0Q3w2mTuUn3mSoB; path=/; secure; samesite=none; Partitioned"
                 },
                 {
                   "key": "x-content-type-options",
@@ -4640,7 +4658,9 @@
                   ],
                   "raw": "{{baseUrl}}/horarios/{{novoHorarioId}}"
                 }
-              }
+              },
+              "code": 204,
+              "status": "No Content"
             }
           ]
         },
@@ -4812,7 +4832,9 @@
                   ],
                   "raw": "{{baseUrl}}/categorias/5"
                 }
-              }
+              },
+              "code": 204,
+              "status": "No Content"
             }
           ]
         },
@@ -4956,7 +4978,9 @@
                   ],
                   "raw": "{{baseUrl}}/produtos/6"
                 }
-              }
+              },
+              "code": 204,
+              "status": "No Content"
             }
           ]
         },
@@ -5020,10 +5044,6 @@
                 {
                   "key": "pragma",
                   "value": "no-cache"
-                },
-                {
-                  "key": "set-cookie",
-                  "value": ".Tunnels.Relay.WebForwarding.Cookies=CfDJ8NJJuTEdEi5KqensronCVW0_bTs280FgTLUoip0rfqLhZBCSkgF69tv_af7cpDrJEM3V8NUV-Ginhd48aiWyqYQjxCgjX6iLAvGd_MbbeVvS2PrvtymtN0rZpoAAWIUXE-Kb0RPtv9dadH5p5EDLbd6Yo5mgQls58DDx5eN3XJfuFbil5H4P9LtIuVticwBYTz4x8SUVbTKdm3tNUZhhOEZHTnqr2_ztHB-gfLJyl22XDBMJbSKdSxEaOfeoQX_Eds70Deah0b-w__WcksvEaki0JA5PmlIeh0d-4ebv_huvfuPUeK8fa5qSKkpmyOc73JlYGCFhOcQAoQ3iC9CaZ_h-t5Bta-u2pa6q_D897bh2EKpnpyls8GD1IQszfpqVTxw8rf_ZJDVjs4TaI2CBv6hGO_ok7r8dQXI_uC3m5WDa4G6BJsBwPcwPrlEjGXwfgVCeOeL3ZwAIwBvmo9fezCyMuKvonm85yaEdfeJETY30KCcjUmxYhZ1GEZF157Kp_-t-mEkehiKMDjStaywHRSHHNTvOHc0rNzdFFzmIJ1aAPPb8RvTUpwwllOyND1iukCtIdfSx-C9zaXGJSRZCyPFsS08zZZvjH29djcBYCcuvWD6WY8swU46FDdDxZG-Wgh0Ahc5Kp_BZyvu-F3S06tVDgmHcfxBenuG4rSwFgQQv8ohS2YIOj-7cj371OTcwvarWPBQUDBYQmIxWeH9IMedxbCmwV3Hb4aCxT0Xvq-oKoXbFuXQU_FIGu8UYuXnjWUd1jaYDqmGy0XaJ6hvHsQ0gEy5PHcy48Hm7IXiFDSjFroRYGhJL6XQKKLN5OiFwW_zjDVEDrIytCD0TPKRRK7b7tk2aPTGuWaHBFqeb4TsEyFVMuAlHbh42UWpZYJEoNL0vksTmlbuchRz5170sJleSE6t4GG6b5AJjT88In1cuXI1WQi4A8PuIUFRIaAxRRPpNbTCURn2KTVIaJSZCxQ-4-YD0-M0j7Qn_oNJ_kalJ; path=/; secure; samesite=none; Partitioned"
                 },
                 {
                   "key": "x-content-type-options",
@@ -5104,7 +5124,9 @@
                   ],
                   "raw": "{{baseUrl}}/encomendas/1"
                 }
-              }
+              },
+              "code": 204,
+              "status": "No Content"
             }
           ]
         },
@@ -5182,10 +5204,6 @@
                 {
                   "key": "pragma",
                   "value": "no-cache"
-                },
-                {
-                  "key": "set-cookie",
-                  "value": ".Tunnels.Relay.WebForwarding.Cookies=CfDJ8NJJuTEdEi5KqensronCVW0m4-xeb8uDN6sznkozGKmQEDZHRuJTh8tJrHsxv5RZPP61zLrpUr-qilQwdwRLTPQkLCsFRyrdqrzxY5KFJ1t4wtJ_LHB6C1dCtOxjDtFgLR73yTBg8DUWMXx10uBYkHHFiPdyAIfIuFVWqu9jpjfcORUIWB3KWLH_Fd9VTVhCDCoFJbNSUlqJXyO6owEgXop2jrXHHzkzS9E04bTssKCVwgs8Dxpb72Lw3nYOqenROzldoJoI3qmV03zonRnwQf3_aUIUuEWZAZUfgNKpBBbeVfLrRRqSo-7LIkwwnmdH07aCy66E6yZkUmkUqhHZ0Rr4Rn7x96IVYyoH4VHgEZkVweMilAPMwSRdFS_Vv6Xrz-7DjvvkJPsv6sDhW8lKXhJd6m13WmOiS5q-iQN5XFlreFcUFckvLJ-soSw8FNrT_Qb2pOY5KmjsQ64970qCnkSOl6YeIzFkFML8beses2RCyrIMMXAxoj3spBU9ZN-ylelRVc4pK6dtQSPXmA4G0cUfXqc5gw066b0UW2LItYr0nlrknOuojqa-_Xja8-fi7-CtXaSImBosDUGHXbmSDDPsVrEY_WHFpVksXmFJsAz4QdzVmTIFzagty_3EWmcbi5WSRhdCY20JxMb3USvCcf0wZ9KFE4jTvm6WBZjIDsMo3Cw64JZka-RY199QVwfsMlbb-rZkdIUueUyM-o42Fl7C4Bt4IBzN0HovFt0blNYqVcIpd79oAXLtTCBRcs5aP11RyDquv3Ao6UqYQISMGplLbXNKjN2zO62wjd2DoPOj0kEs3UAZg9wtbzVY8m0O_EaZazboYUzrirB3ZSVBCUJjdy0Hgv3U8N6fSesXLMCqEH4XtTNjLWgswhNLLPB7kXTgIPP1uefb3pJsaJqEfcFear_cbjGT4nU59is6IsV--XB1ZvWSjR6_JDynvpR1ooAAie6BihZbJYhgeZnPRJpLCdw7HUwzyncQ3-RkX9BN; path=/; secure; samesite=none; Partitioned"
                 },
                 {
                   "key": "x-content-type-options",
@@ -5280,7 +5298,9 @@
                   ],
                   "raw": "{{baseUrl}}/vendedores/2"
                 }
-              }
+              },
+              "code": 204,
+              "status": "No Content"
             }
           ]
         }
@@ -5437,7 +5457,9 @@
                   ],
                   "raw": "{{baseUrl}}/produtos/disponiveis"
                 }
-              }
+              },
+              "code": 200,
+              "status": "OK"
             }
           ]
         },
@@ -5515,10 +5537,6 @@
                 {
                   "key": "pragma",
                   "value": "no-cache"
-                },
-                {
-                  "key": "set-cookie",
-                  "value": ".Tunnels.Relay.WebForwarding.Cookies=CfDJ8NJJuTEdEi5KqensronCVW3YHvFnUBpOSe2hkh3v98lYfnljo-ZRiwYz8vdw5o_m7vdIrIvx4ocXM4dNZLre-72RnVzHuITOt0wZ3srW5dl478WhSzisBIc0tjoPfFY2_xg7gKKHZaP7KlnqDYUo1PGfVE9M6jHTnycRCYdidvJOCJJADGyEVXQbM5LLodeFl3h2NLk2oiwovvzstJuAmFUgVI5dLOZy2fwvrD0qyibqXdSCxwmb9SHDWKCleP8VgyRVV1BIjPtGTu15Sxq2BVrV1cmmMNSebyLdFjRrDaX31mrpHRPpvxmt0HjgX-68Ew37MdKGVfikAteh2aoG_Md8_2bG-WLnRTTtrJGizWEq-xvEdYnLRc6wGg2N9Lya4-RYKMn0QLD-pclDARJiTJ83EGvNx2QgvbdRUNwpnUA186TVRJwmHmHeUBJXXAmMeioHebQLjmZtnBHv_s3GNJSWHg5-BVU0uE5qmLCNpgBGGnqhvI2S0TFzUeQt5rqVt1zdl3lmDvq_7c6T2kOMxPG389e8pY2fOiLjVaKKEUWMZ1Ik3VPFsOtDrxRxmOYhSwwFotx2c4Psc0jDjpb4L13w5tviWKy3Pef303-KHtrerqzkM2CK0SvZWmynAZEjcPyKEBZBZ_qSKJO306i5iwLnYsUw56hepXqXx2GmAt5BxAuO1u7jS7k_diId5LqDulj1Kl3003r6MpoWpHeUlTjgEsHXK1K5GjiGqyIO6ixqXC61NatvUxYVA6ofo0Dqea7TwPuRGf1aRWuybyRbkAyOP5g3gdPIpurrf8pdjDzXP--4fhfK0gmMLzV8uhVgdG4JrAKS7xuGcw53sEVPKtBYSJDDOzBhKCVys5089pt-s9qYSb55ATWUxPNsMu4lP8cd5tZOR5g8YEGt91wvWUsnAdCLZO1ez7P-waIl9yVvTBi2VM9b5idNUDn2fN83Fu96NZ-i0dvRyx6C4muyQDH5vIPTnX8f4wNaFOGlb1Ll; path=/; secure; samesite=none; Partitioned"
                 },
                 {
                   "key": "x-content-type-options",
@@ -5605,7 +5623,9 @@
                   ],
                   "raw": "{{baseUrl}}/produtos/busca?nome=bri"
                 }
-              }
+              },
+              "code": 200,
+              "status": "OK"
             }
           ]
         },
@@ -5777,7 +5797,9 @@
                   ],
                   "raw": "{{baseUrl}}/produtos/faixa-preco?minimo=5&maximo=12"
                 }
-              }
+              },
+              "code": 200,
+              "status": "OK"
             }
           ]
         },
@@ -5855,10 +5877,6 @@
                 {
                   "key": "pragma",
                   "value": "no-cache"
-                },
-                {
-                  "key": "set-cookie",
-                  "value": ".Tunnels.Relay.WebForwarding.Cookies=CfDJ8NJJuTEdEi5KqensronCVW027L3CwMMqzLIuxGAOkzoNNFWwDK8-JR78v3-kVyGmSPAGz-xfI907nSvrmy0mozH5qPkx7MSlV7Weh37ymwO_dJ8OrFXuTCklwA5ubyft52PTMXVY72Sa3_Tk1ubSH8XFlLbLr5lTBnasOTNWctlJpkTDXTTCLOvCf4oW5IzK9Dz_b2V0tSjTHZVIUm_IvVLjXlU3wpMo-jtObnrLNx9Kg0n3zwjrlmnkukoZfZqfEixQ6izPv-sx0bku8re72pgTfPCVG9TcXpQz3uDrSL4S4PsjQChrzqchd2HRpWK5cqbsB4dQzBZvot4YlwkmKWdlcwLN_HQ28ECOt4cU1IJFutccDmcQ9OBN-cVV-Zm_ZaYMUswcTMYGwnXUpvhVh58V-hfd41VL-IzXAaGUIcaiYn7DKtwR3CB96Il0Q-KjxB1sCQmsm4EzzG9j0amHtllpIOz4crSSRGtp3RmQeAbYXMx3bv7Pp115pEWS-VqTJ4dYnEfEOM60S2LxCnLabB0pjq0CvClBiOKGZnYTKHrdBGjV8yffI0FT8Pljhom0QqT10pAzrB-9XbRa5p4coj0bhuRr9Jk8_dlNmW4TdkzKWyKbFGwfw6M4Sv5PexRJ0C9EiwQl4pYTCY7XysmAMR7hJQijhbpQzs4bNC4gPbXi5bRWCC8hFb9IeTGdoLvZ67z-ce4KqhDU-l0_vayRzhL2JbuaGsYVg8x-ba3eFYRzvDmMUTrTBOgAnA916uJDsD6kYi7czbovmB5p40t4E2bJGB4tH5uH1ZMrDhjZGzdKZ-mhU5hnkYnmUHIidW-v-We5Z9WA6FdJhmM8xGUpNnh3jT-4zvloK67y2efHu_TJj6UxOR5jbqd4Q-Tm0-5WKzo-losMeOO75RuUizvlSg-Ldg-Tn7YFrUkRibMxc9YITk6Kh9UKLyD0ElVNPSpLyvd5Y12sahMBMzh6yBnhAyz138e76Ak7GhnAdrBZhbb7; path=/; secure; samesite=none; Partitioned"
                 },
                 {
                   "key": "x-content-type-options",
@@ -5945,7 +5963,9 @@
                   ],
                   "raw": "{{baseUrl}}/vendedores/busca?negocio=doces"
                 }
-              }
+              },
+              "code": 200,
+              "status": "OK"
             }
           ]
         },
@@ -6099,7 +6119,9 @@
                   ],
                   "raw": "{{baseUrl}}/vendedores/1/produtos"
                 }
-              }
+              },
+              "code": 200,
+              "status": "OK"
             }
           ]
         },
@@ -6172,10 +6194,6 @@
                 {
                   "key": "pragma",
                   "value": "no-cache"
-                },
-                {
-                  "key": "set-cookie",
-                  "value": ".Tunnels.Relay.WebForwarding.Cookies=CfDJ8NJJuTEdEi5KqensronCVW0BJU5kAFrMMCJ_7_mFGPA8CDPgyfzG226dCLFU25G6XN1LAcaSIn8HbxYKS18mrGxbyLPUVKe13KmelgMEe37gr0uopnzvbZW9_AMS-m0Hk_fY0j_9PWFP-clqMxNE4qixoOVDVVsF9OLYEBTnD-l5ohSS5UBNqsMVfq5BSw4ghnSBy7ZaMhOFga10C8P_eZ1W0idhXQ0-Su5d3NN2yLVI1VJsEdBAAFihB7Wh9PldUji3R-gByBZOHt1Q0s4J_VgLFgjJdW0InZoxiKIqqwy7GkMlWtKWfUv-RXS7IjV5410q9OegGdJ7bRgbguJHynohxuH_rYi136XtWZgTFkdE981Telibse6XUQoCFtk-QtFOWAg4OetPcPQwngAgPx0fAg_146Skt7aMaWApc_Ox0b9o6Wl32WE9L1EO1NqF1EPfeQqrLwg1TvRWobQtj8JYsUUVOEKSDrYHsuaw2K69XUXlkjWpTmn_CDzxf0mtiaGqYB5Zd1U9N2Pe3WY7ltO56Pyp4-JV8h8q6grdVLQUiqoEGvAqzRTEKzEAO0SIhiwNHJs255fSW2WX6y9ScFb9FpstUoMz-YMnbWTjMTQUP3wm0TP2sv2wugq_VfQuOitr6UTOam0MtV3DoTpOQddlGSITcU7MQLYV_ZPUwfWk-EtOVm3zjYiEt9bAYsU0pfhp0M8dJRMs-eS8yf99h338-tRjLANMl9kvvtEor9a3DURiv-hRicS4PIv0ej5KB5UxxK3UlLWfWZ2oSCT897iy9Nqc9_4qK22ECiysuyWUucF_pcd0nmxmpH42FwNUUc3e1hOZTgWJwZzsWwpD-pOD_0AtS2nhj7XTkZZ66xEFpVF6LqCHDKj8ps_bOSOPp74njaMz86nOIxQ4fCLJjTKoLYz9jyJ2_uAvm4Yb8h6MY-aIhnWuXhSBUS0PHcqUuPg8LE8A7mbBv4xuoMTbIsxfyPln3trryYKAcNYaP8TX; path=/; secure; samesite=none; Partitioned"
                 },
                 {
                   "key": "x-content-type-options",
@@ -6257,7 +6275,9 @@
                   ],
                   "raw": "{{baseUrl}}/categorias/1/produtos"
                 }
-              }
+              },
+              "code": 200,
+              "status": "OK"
             }
           ]
         },
@@ -6411,7 +6431,9 @@
                   ],
                   "raw": "{{baseUrl}}/vendedores/1/horarios"
                 }
-              }
+              },
+              "code": 200,
+              "status": "OK"
             }
           ]
         },
@@ -6565,7 +6587,9 @@
                   ],
                   "raw": "{{baseUrl}}/produtos/1/avaliacoes"
                 }
-              }
+              },
+              "code": 200,
+              "status": "OK"
             }
           ]
         },
@@ -6638,10 +6662,6 @@
                 {
                   "key": "pragma",
                   "value": "no-cache"
-                },
-                {
-                  "key": "set-cookie",
-                  "value": ".Tunnels.Relay.WebForwarding.Cookies=CfDJ8NJJuTEdEi5KqensronCVW26YLqW5lWX1QbONwaUqDAgEVS_swPXXWYcLNMPYMUxlNxJT9NtTFVKiVbSmdwWgTo-JmUWsDd6TfUr0sYz70_0J2ghEJu82yt3uwxlhcii7C9Nexj4mzik1GlAC6jor6S3hoW1gEUMcrVsaMQAdMBGuyO3Gjvz6UqKNpQyxGWv1ECawqzpKI1qH0n78b8hAqtNFAdMS47cRxn4nnemFJEfYQHb8wCFGi_6MAu2GNmSEpauW-BKs3jXlsK4s7cnz7-Q6v3gmqZaS8A3v1RSzXbF0NPASxXrUI_7Lo8v86ijLiKumYYPT4kstf6o_Y9jDfic_yxS_13QuiJ0f8F5_jL2Vl9O_JtRtDp3YxExopCVBLvPlo5-yXiL1vhaVY6l9gOhMdcNTnY_sxKEXoJha_c_9Tc6M3-K28tSlfdXv4QAZZopgwmjtqqqT_Br2GWL89sfiaZFUmxCp12gqaSja26on1CA3pNFVXPjiN6PQFSrd_qMbrKOB-32AKvFiVEPfzoZhMQ0EwNvHAQcGbgwOQahbftsyE4ftCuX8P83xiJaO-jZNa9L98nfJQdoAl0kSWbz0YV20qUvkzW_QI3caYeqoRF_zjKIzBvWFc6ybxQhOn3UCrNcAXmhbCEmfRC25_7J88O_LtKB9hZcWQPrh6dqW-pN3QXolhH6yE3cOEU56cERySAWNRZR-cUUkTIZlFWStQbAojopvSI-rFEKc3Xfq0r0Xvzppv-0mZUevlEPSB8ZwCsKZYaX4Bx_jTfKKFTCdMJhcotoMTpmwMr94-YWEjELxEPbST2qaLPIuXkr7myxAo2hvVkGe-na1TsO6jVX7Lpr5kEhjieTU-quoXdt5Bu-wq_RQFltjHO0twZpFfqia4ZRFXZCA8YaiC8JeSiGNFnV0tcJvQVKt2w8osqHYEjLh1-zP01Ktda7lq6shb6rpht5_VGS7bV1fSN91BdgLJzN_HE1COIDkhYvR5RT; path=/; secure; samesite=none; Partitioned"
                 },
                 {
                   "key": "x-content-type-options",
@@ -6723,7 +6743,9 @@
                   ],
                   "raw": "{{baseUrl}}/encomendas/status/PENDENTE"
                 }
-              }
+              },
+              "code": 200,
+              "status": "OK"
             }
           ]
         }
@@ -6902,7 +6924,9 @@
                   ],
                   "raw": "{{baseUrl}}/categorias"
                 }
-              }
+              },
+              "code": 409,
+              "status": "Conflict"
             }
           ]
         },
@@ -6983,10 +7007,6 @@
                 {
                   "key": "pragma",
                   "value": "no-cache"
-                },
-                {
-                  "key": "set-cookie",
-                  "value": ".Tunnels.Relay.WebForwarding.Cookies=CfDJ8NJJuTEdEi5KqensronCVW3Kw325813wEBBdqdW1seuVc2gkiSOWR2F3oE9Wwbnz35STiVeONWOtFu8efGwhHm92ZSiyfEamFg8jxsPyqn4ux44nFDVvKhM7biJnRZOz154Z98Jp15ZnaBWKS_JRONz1M7BYJ0UL6n5axU7UTR2k7gWV5xcbgdEueHbfixKANJqpSR3x9q52dFCRj9jp-d4X_9iiPIfCczs8vD3nIHeXkk3h1T6FMAroENTG4rGBpkCkyvWYwZhdzprQA5QbLXjNNDbWj9NrZtByYOuefCEITlAHR2LAsvQqDonqUENPc3EPE5YNp5MmJz8dDm1pa7evIZnHE1Z6Uvr7Naw1TGGW26ddexXgQcdPNxcsyoAMNpL_xCMvCPtxqxgvk0CMbjzsu78xlMoXDxF_3p1Q9Yo25TOrLO-3HgIVuLIoCZCul88qg8SWaOchDxHb7K8Ap49ve1_RwUs8QQwWFfWcEQPF3L0ZVxeWPHbqA21iyQtvG8OiJWtWaMYRs5DE_tAsl1baHitFiu9Cm0ug1iLsQ76WqZQTKQz9RkzN0RBYcUT85Nsu11l0weuJY7y6IwuBmU_8lTxNp3uLKMAx9daE_UXfefKWUlIc9gjDuF6dxSreWjjJ1ArjCNI0Fq0E66S9kJQIVLvhHhGYqQ32Pq_MJf98W6olRHxRV5oTu2Zwlaob8v2uNr4QPUaauH5IUCbiKkz27uS_D64lBQKN4mAjMnsykXpTFcpDN-xrLws29921VVzTruzFMnDfHQnT6MVWCuOTi_7bjimKWAEGUYQTDx5pm6DVs4ePR5g8FANU6ZTzY8T4YdGk-9QMmLpzX1tclM8oyNZwTGLAytZ5eVe6_VDjuzH8kv5rOVcgn_oOoz9LPjMkI7XsTeNN7IHXLueUoO0n5c9inE36u7GMJHVCGfft4zuNBRH5s4C_UNIGeEIQIY0yXpJ-uJRGrTddcpGHlviVE4bAGADaIq10ZTPPl-CH; path=/; secure; samesite=none; Partitioned"
                 },
                 {
                   "key": "x-content-type-options",
@@ -7080,7 +7100,9 @@
                   ],
                   "raw": "{{baseUrl}}/vendedores"
                 }
-              }
+              },
+              "code": 409,
+              "status": "Conflict"
             }
           ]
         },
@@ -7255,7 +7277,9 @@
                   ],
                   "raw": "{{baseUrl}}/horarios"
                 }
-              }
+              },
+              "code": 409,
+              "status": "Conflict"
             }
           ]
         },
@@ -7337,10 +7361,6 @@
                 {
                   "key": "pragma",
                   "value": "no-cache"
-                },
-                {
-                  "key": "set-cookie",
-                  "value": ".Tunnels.Relay.WebForwarding.Cookies=CfDJ8NJJuTEdEi5KqensronCVW3Iu5FBgpVJ5O999mS4vL7qCMd5ah7qMSYy03k-wHbXcKSMbOGAWAIuGmjTMvopL_5h0xZhvlATIxPdlLWT150fSDegbRAMd08DGg2I2lLcNqFnPdHWaQ5RqEKpZWBgo6PSTcUUgAOZek6gya1uTbEK9YlIFRY_wY3CBa9TyxuQOedGWiMT0gRzU6_mROB5hhswViC8ERkZsir07tvjxb4szAs-u7XhyYTGcEhdz6SZJyjobLS3HOf7JZMRDqI94_4SZgeSkcW35HCUEbhovli6yDYuKMFsInzg1Dfr_f4rv-oPd64hOPyz67lQ8krUqvIn0Rqsik5DhVGM5KeratSZ2P5Z_Do7jqjYM-MKB6TXFQirBOEf_3YubYwomwek1wYw0rSQwtlZ_FZ3h_nBCFtC0vT7AV_y1TAiwsMtxyVFg_iDpns9bgMyRPU93O8HW9YYn-yMXjbuam7sVensOc5xdWHwdZKC4SKqRBphvfxzexbTJ264UCKTz1XB7Lepo9cDNZLhMLwNW5BvdGUMDfOp_vwBlrvMgsrpFaq7bTVXsHU7PI_jSE_uy3fiXPtz3863Zz4ITSca_NCeUhSjgGRFctmNRq9ZDnKw5gh13n1XBk4ap3itZIO4qIVGjaLuOeroMHg63LdF86CYMYtOrFLjPUzp4h3jBqTVHd_kxHogO2PQnAEknDYmCyGQ4Difpj4dp4V0ZpElhVf2zz7kPm9nR5QUHjyClQjZ913gv1cR23h0k9_V_ueeezzbS8aJZGARPuFOyhmh868nINPQgQmJqqDBa6rSa2XRNMfoD8G7ixdy63VIX6YnK29PWhEqRlQJHloQGJoGNTPGSS7qV2IONWsEo6PMxNHnsv8b6Cr3RM_WpBjslOMKZAIo6itlFXztlRkUABY-oy5TbCWB4ElsR1sgu3RSp-8FBGKAv0ctA14DSHKBl6OEG1RycnmcuywpR3uI66qky2c-hsHBW4Od; path=/; secure; samesite=none; Partitioned"
                 },
                 {
                   "key": "x-content-type-options",
@@ -7434,7 +7454,9 @@
                   ],
                   "raw": "{{baseUrl}}/encomendas"
                 }
-              }
+              },
+              "code": 409,
+              "status": "Conflict"
             }
           ]
         },
@@ -7608,7 +7630,9 @@
                   ],
                   "raw": "{{baseUrl}}/encomendas"
                 }
-              }
+              },
+              "code": 409,
+              "status": "Conflict"
             }
           ]
         },
@@ -7689,10 +7713,6 @@
                 {
                   "key": "pragma",
                   "value": "no-cache"
-                },
-                {
-                  "key": "set-cookie",
-                  "value": ".Tunnels.Relay.WebForwarding.Cookies=CfDJ8NJJuTEdEi5KqensronCVW1_cMmnIQQshqZ9MyFoqEinC7i5G0zhvIduu2UN6xnzAdmV_tnypy8JhwLDQdGTmPT7oDOo-FNmEQ8DVnDp0ufXo3NBVVzXzhgYYXmZvrgclVjksV7N9KUyPHpfkrcRinAHtXdlE9BTZEBm6QPca-zvdhPAr0G3mXJlImibITT05672bRabcbwbhJNnn42s7-H1aafmX4MATMjG_V9vhrmDHydeDKPACWMOomRWn9laznOw4psV9gnPr8XbpgQHAdmVXRkFEHQ2SBzodkm9oJucnFX6GAIZJznd5ywu13QoGsH1Ei0Oy3LbOPXhGXYXShj0S8bSdSUedufESSjvZ42MQl3LhaM2U7CMxnCMuZ4cnVWS9JxTr0ZUtCR91QLHK5HRT6PgDflS_JbKGl5z3oNoMozHev1ovE3gfq_fzkEs7PGHSmzMJTo_Cjd5BAMWgh96ht5N1-3fLxCOawSJsLLxzubntGZiD5hcpZ-fBB-jU3X7kjsZAloSNRI3AqhXM7N_Ca87Ws0e2VjHNnoamwwr-Laoi4Tb7sfDsofllAgYsxYMiipN8HrvzvGWSjwqV5SsXIlz5XZv81SzoxdTY-H-OuGMh1bOxMLwZo6XaRVo4BW4VaVSUeAZiBM5n1x5S-1AWVNYPuNPeO9sPmMWb9_oGa8ZmDpMuvBhuKzT5flFckeZ3XOH7rE4aN4J3GSu7NheqKN2dr6TZcOUqHXrCph6HM7KVynW_fbTyhg6u2ED4hMGQW3D5uHiwwSoTFHMDm8iMislRYaPuOyMGc7LG_ruxJJAC1AXL8d5OEaXlKHSyJZeE6eixzUqijfrMroal1HogqFrY7NgY8qYi81imqXoxmvct14YH8em-56TKW0Ie_xRoIHs2dwS7atv3Z1uzqWaKezbjsSp7iRJG49pi8j3bxvnNCF8nTmxAKBNkyqrSnansbMXazci1V9yJc5C0a_nvGAAu6CL5ZTsv6KUSlEb; path=/; secure; samesite=none; Partitioned"
                 },
                 {
                   "key": "x-content-type-options",
@@ -7786,7 +7806,9 @@
                   ],
                   "raw": "{{baseUrl}}/encomendas"
                 }
-              }
+              },
+              "code": 409,
+              "status": "Conflict"
             }
           ]
         },
@@ -7856,10 +7878,6 @@
                 {
                   "key": "pragma",
                   "value": "no-cache"
-                },
-                {
-                  "key": "set-cookie",
-                  "value": ".Tunnels.Relay.WebForwarding.Cookies=CfDJ8NJJuTEdEi5KqensronCVW1crFDL0Ngu8klUAbxnq8CXRBp9O1yz3tysex2ie_0fCCQZtGbwJcn79AXjabGLSLPEMbKj_o8ugqc-2xFjnHt6eTx8Qn4rjb2sQxzvmfiJ3gxkjPK0A8iqXPSo0ITte6OEs2tSd9WA233xMG7ERBMcqOTbiPqapU6N9w-2t3AlKfAOGSkiIory7rFLZo1Z9fMYSP5nx2dUp5tn8_gmJglBY2i0PdV9jDrc2dE-SmLy3Wq1dTfzm0A45AN-_VCEQb3IdBJu1DPKDh4Vd8Bc4sAA_EKv2AFZaTMsUb7xwGYUl701coWZ44PcrC3JWMEB4uBNtHCVCSZo834DjaBzGIp__F1BFBHSOSvgyUwyZg35ruK2Ln0VPE3ic9xPXwQh9cU9hm0TRu1Ksd0GDz2TGNgZSeBdc8Bija_3plDRpbzS6J4AOgEyvQe6IMomFmdPKQg8hKfYn9EsVIiVNaNRCKmIdq7YtUQ6HKHisDreVT-fQ0M6BavQR7sRZllAwhVIXFZDYsq2VJ3sxK8znR_LCbNmaZ_JAyuRqzhUUxtGwkHy-9nD6oSijbgiZcQSBtvZreYl4cLtzrrcxJCvzEnAsb9W0VVD5yPjIJTRFwNDagmaWS1P-9jEjWY2LsKgsSY6qMcPRZTUBGXx-ZitmmtwXmSyZaB60GDc_b8VJoR6ZK0Gac0nQfp-Vca6p8pzkv6MGgUAT8XbcBka292MemQsHGiTsEnX3cwitXK4PIeEUVioardBIar2cSp_rwSFvaldEntt9Y9rkMDzR0TQU490rVjAwB30wP8GFOq0Nd1E1gkVxZNUEr-Vj5aG8rvqKs4obt5EQo73uiwy4l1Mgs-deE3bg6H51Cl9USTX-EdcCfXeuKwJN50lyEYFJIAsGhFtUJk-hi97b46Raxjt4zRsynTVebYqVpK6QOOULhPCGz_pCoEsf3a382fOuTbuMj0z9hv9AmTwc4ZUEFPZJtF15sNw; path=/; secure; samesite=none; Partitioned"
                 },
                 {
                   "key": "x-content-type-options",
@@ -7941,7 +7959,9 @@
                   ],
                   "raw": "{{baseUrl}}/encomendas/2/entregar"
                 }
-              }
+              },
+              "code": 409,
+              "status": "Conflict"
             }
           ]
         },
@@ -8117,7 +8137,9 @@
                   ],
                   "raw": "{{baseUrl}}/encomendas/3"
                 }
-              }
+              },
+              "code": 409,
+              "status": "Conflict"
             }
           ]
         },
@@ -8265,7 +8287,9 @@
                   ],
                   "raw": "{{baseUrl}}/encomendas/2"
                 }
-              }
+              },
+              "code": 409,
+              "status": "Conflict"
             }
           ]
         },
@@ -8413,7 +8437,9 @@
                   ],
                   "raw": "{{baseUrl}}/categorias/1"
                 }
-              }
+              },
+              "code": 409,
+              "status": "Conflict"
             }
           ]
         },
@@ -8481,10 +8507,6 @@
                 {
                   "key": "pragma",
                   "value": "no-cache"
-                },
-                {
-                  "key": "set-cookie",
-                  "value": ".Tunnels.Relay.WebForwarding.Cookies=CfDJ8NJJuTEdEi5KqensronCVW1HqpX8aLjvWAjyJY6YDLBe9qmibbmrzRMdkmUkb1HGoeBtG0VfrshCjvIHWOEC6ZURQIaaTB_taoNdyWOZGRUJ1Y7oC6TPTxJYtSy_Xkh9oYIIFqt8nN1R8LZBipSoELRI_vK9-JxapnrrGaYLb6RTYi0GVCFs41I-P5UTIIE-eyEm3iPeZfkRfh_fqBXZbLIUQOP36Uq7xWHnziouu5w0i5DuW3yIjq99MhuIvrHPmTcatnGo-SlYFwU6J21edimxGs20jZvoQ053RtKzuhXTo3xvBWrtjhzp6HmbmVM4jJu4KZHqNCYXVN28SLT5b42ySjveK4lWgIRHKRmWA15EgHVqmNV3CS3VKeOWp9k3X731toaYVW-wZ6Gzub7y50dTN_T_In7rtxRwR2Wj5dz67gK3fBypp6oR9LZuRzhaU8WzDimDwx5cROHLmAA83O2gkRKxwssgxxRmF6KMoAXFJmPQJ6UrLjZN-9djpjIEVtqrKZKa_j-okh6lNIKk61JX6jlnDrkriQOyfw-2Oq--pAeI5Wh22TaBpsJydHvrP_sL-O0HWjvBn2_sz9ZMGEfgHOpGmp1InhzGXGczFM_6PUgwyUkX2kOI6UhmNylZl82P9waTsHeRx3vJL1WZ0J_fkfaR8wrsjjPZ4iP5iqHyjGrX7ksI6Vf6FBXkUT5vkpfBYEuoy4sEyn8iwoGc6n_jdf9QOGlnQ5LflTrow3doqOO_XB-AqKyZcl8rwyS8UTvX48uX52t0iG_QZOwZ6ioyO5zu8--3swbiEKLflKK8KKxYxKR-UcKpNo0WS1POOC72rlF1C0VStJcQTdGUmH2jsGempird7xgO953u-4iOJnwolR1VqUNKXAzwtjjZqg3jWS0rlPeJb490XhUMeDPo0Zv5YQFh_85HA4t419cY5ROJfZ8TtJJ9ZoVkLmt96sCmhel0-5Mgg-3GPst1LT6eaOwVmoGs1ilWI6t-3Nf-; path=/; secure; samesite=none; Partitioned"
                 },
                 {
                   "key": "x-content-type-options",
@@ -8565,7 +8587,9 @@
                   ],
                   "raw": "{{baseUrl}}/produtos/1"
                 }
-              }
+              },
+              "code": 409,
+              "status": "Conflict"
             }
           ]
         },
@@ -8713,7 +8737,9 @@
                   ],
                   "raw": "{{baseUrl}}/vendedores/1"
                 }
-              }
+              },
+              "code": 409,
+              "status": "Conflict"
             }
           ]
         }
@@ -8892,7 +8918,9 @@
                   ],
                   "raw": "{{baseUrl}}/vendedores"
                 }
-              }
+              },
+              "code": 400,
+              "status": "Bad Request"
             }
           ]
         },
@@ -8973,10 +9001,6 @@
                 {
                   "key": "pragma",
                   "value": "no-cache"
-                },
-                {
-                  "key": "set-cookie",
-                  "value": ".Tunnels.Relay.WebForwarding.Cookies=CfDJ8NJJuTEdEi5KqensronCVW1evOd6q_43-Lgt15fpMju5wbUh-TvKIrjZPkixfQW1lUO0wuhS9n8WkY-ScfulDpP3uLPko5MYUi2VwXaM1cZ1OX4GTMj7pcQAnV8sRP01OrjswIcjlMnUfMWt1C1kfB1o5-Q8fpBVBLmGrIzsUwoktFmHcH72OeXi1MCAR1lTSd23pL6WBxfsNh-4ZfeJwheSYNjjqjmnVKr-KPIuShG5zgxqdvv1WRclVJXLuSxVe4J4ZBK6-CM6vVExvQ_QTsqspjHC2NdY1vE1FREq2dSJqKxlQVlFqKdzyRj-Yt25gLQ580tvnB1QzMPVAYyDyGJ3fLYBABEX7Kxgk_-Yw3f4wNAuzIsBmZsxT9oqHsXN2QM7uxjUQ-twGcqflIE_QMqaTBAnN1pCrB5XyDI5i6VzDejRAtIg2m84sTskG9yAaVIageHl7PfOJFGcNbMakiblm_dyToBg3qIF2CCxQ2BCh93tHXaoEb2W0I7_gATPJYe22gMPofIVL0IMA8AfEGQfr1-SGyR2VBGzVrR8lA1tgchq88dfg2jG9urXPtV82DLrf3WTUY9xFKRErdaiEryTUZEcNmOqxABbMb6Bh2Z206RbrQrBEwtVpB2tTFRG5JgTksW3KtVEpWb8F1WnbIVQlEV3ipgmA06N0hhvjhWqBO-K8MjkK7GISS7antNrpYgO5DfgKJ7VNp8psP5ku40mrUwcXKeAh_Ct-0Sh7qflUOXKqBfcF3wHFOe_iLGFdcfACEsAW0RR08HAjcnX6L136O1WTv0WTgYtX5GCx2ofzR5FR2ezSqb7TYqDBezcm2J0mrfcBWN6HF37LvHYWHHC34PDH2B_kwRX3q4Q47NzwVHURAX-LXLOCUxz0x2zubyVMgiNhlFA38cJZMr3RL3ylisU3Gs0gl4E2oPbN1H_pxWnfFF7fHGfo0Os9htozeWyAcu8cT6PchFEoGhKNKod0qtCoDKljFrINB4R7Pnb; path=/; secure; samesite=none; Partitioned"
                 },
                 {
                   "key": "x-content-type-options",
@@ -9070,7 +9094,9 @@
                   ],
                   "raw": "{{baseUrl}}/produtos"
                 }
-              }
+              },
+              "code": 400,
+              "status": "Bad Request"
             }
           ]
         },
@@ -9244,7 +9270,9 @@
                   ],
                   "raw": "{{baseUrl}}/avaliacoes"
                 }
-              }
+              },
+              "code": 400,
+              "status": "Bad Request"
             }
           ]
         },
@@ -9418,7 +9446,9 @@
                   ],
                   "raw": "{{baseUrl}}/horarios"
                 }
-              }
+              },
+              "code": 400,
+              "status": "Bad Request"
             }
           ]
         },
@@ -9592,7 +9622,9 @@
                   ],
                   "raw": "{{baseUrl}}/horarios"
                 }
-              }
+              },
+              "code": 400,
+              "status": "Bad Request"
             }
           ]
         },
@@ -9673,10 +9705,6 @@
                 {
                   "key": "pragma",
                   "value": "no-cache"
-                },
-                {
-                  "key": "set-cookie",
-                  "value": ".Tunnels.Relay.WebForwarding.Cookies=CfDJ8NJJuTEdEi5KqensronCVW0xiMklJJHSadlTMsx0RDireKmjRMO8pwAY1XsgVxs91JzY6ghou7sIyp8fODys__D9jHP2zU1PscYBf0xWkZ-1R0Y9a2Ual5nbeQP-n2jxSmNy9AkNheUkxChGKmC1xSDq_dHgZB-2byKpXz6PTMW-lbrh6gtoAAE4Wu2-wOPNrf9kH71qxkGETQHmBlD3hgaL100oUmlcaEDHAD7Uf4LNpowXIhLZWVTpoqXRuBNCmtKVXZL9bIWXjM5BZ5niCBnoTFLvCB0ZCZadM8KYcqQRJElYDsBmgvAfU8hpEuAgxcdaWpgKSdSnMPiMVI2rfIg75dCgkMy6i-1DQt6_mjI_-n2JILG72ohdL1mC-6Bc7iT0gnVmGMdTYlmngeAv07wNFtjFQhpw1s3z9kYwwKqrUtw8W4GkL1_TzHkVstzsWytNOJ5yoMv9vNmUQjXrrqoi8SCeOHYd02rL6e5EcLbidmsjM-CRwaYtvoPzXrPyy1kwa_Sy6qsRm423Eh043Nhf3WdcsNpNEu30VDAOxmjCOm1M-dUIES-CNYGTNG7BscyrPzU8nSvJnZYiEwNlRRplVKpOYtizxLmEo4fmqwBGsrI1HvG9CM8e5yc1RNkV7VXV7wGRss8K8YhR5sgeBsTH822G7ZtvOBEOo3xCGMFaOtOLVP9eRHywYWgBlAu7Nq-CxfPh5ehuLokFV9K06z5102viVxVlaPbO8vOc5nYB3W_iuYfuJ3LquA4gRTFhcvBtTfSnfqLu6Wrn5Ed4SMtSYPIPkYUpsbLkKps4KlcDlj05K8-SFxRNuZUOr9jXZE6um8fZ0lwhQ00lnN79YQofW30dR6og2RA3JCL1AEOY-6o9UnfkV2CnSw3V9PTxkjVDUB6RhDOrRpApXU0aoqMTtOJ8kw-9CZaV5NVvegiP2tgf77-ZWMrJzxX9sfXKv1BSYTHHJQrJt6I5SgEnvVNr9-Vz-8fF6oxNiXGDye6k; path=/; secure; samesite=none; Partitioned"
                 },
                 {
                   "key": "x-content-type-options",
@@ -9770,7 +9798,9 @@
                   ],
                   "raw": "{{baseUrl}}/encomendas"
                 }
-              }
+              },
+              "code": 400,
+              "status": "Bad Request"
             }
           ]
         },
@@ -9944,7 +9974,9 @@
                   ],
                   "raw": "{{baseUrl}}/categorias"
                 }
-              }
+              },
+              "code": 400,
+              "status": "Bad Request"
             }
           ]
         },
@@ -10092,7 +10124,9 @@
                   ],
                   "raw": "{{baseUrl}}/produtos/abc"
                 }
-              }
+              },
+              "code": 400,
+              "status": "Bad Request"
             }
           ]
         }
@@ -10165,10 +10199,6 @@
                 {
                   "key": "pragma",
                   "value": "no-cache"
-                },
-                {
-                  "key": "set-cookie",
-                  "value": ".Tunnels.Relay.WebForwarding.Cookies=CfDJ8NJJuTEdEi5KqensronCVW3aKQ7QC2wazSlkFQNUgTVfX3N--LMW-IFJeNvKGc-Q-ql1ARcNPYnkvrKBLY31Sv8ZgOdf77JoeZzx1SBB5oxSG7xX8IEt6NkyVI4BYoHA3kkAFFwV6VM_BZVUPnhneK2FdG_m0Qfqm7R_g8_ucT9HgdDguK0zOuNU2_G5669Pur2EFrC_J0o1Ut1ZcMijLM7HXueSQG8qV4A4iORNU-NNB530X7s8ufvhNn8a6I87PBrH26hfrMuO0lUoDylN0l2Bh0F_x9qs25XsE0j7h17cMkYbZj5TqjsnnJW_AtS9Z4ntgaOvDp-vbZvRaNLzIbj4qIPCtMgMiE0nYHk9xb-E-PiiAzVyMOqQTFVfEDKumwvkzckSYR3xf4dm7qDxhwdZpPoZfPpZ9upLKdWi1_quF1KtRy3nhY0g2QzBTu_uCrGCE4NgmjMcOUB60qWq3k2mW_RBsDFAVM4oz2eNzyVBmLxlgYpCWysmd-eyQQtD-OXhYk9YJCmhAVTm6SH-gbjC1tpHlVRhYLG09-g3mTs8jnrx4kIcn27KgzRgMmQAFOOPpie3ss0ywXYMiRdRCiWVYTKypFngBLlNPxQ9eUCiWor-x7wR_cvJzV8hakg5NqtMESW7Sg8fNPtEcyBpyjfUU2kPirLhbYSbIoqgq65EP9VDcc8g1vUnAXU_bZvA7lWX6vbVU3Ifq75RJ9CZ31yscSrlwPyajeMJrD95VWf_onbjG3FkNAazq2wQqe4nx0yr-ho_DZnrt-N4HV6wmYC2HUxhizYQUAARz7kkHmRVb4floY2Qhqvv3GXKP5jrel_4g7WoBUopUvvCQTN7UZvwKnUQX3ngEAGg_EyHs395-r-Q8WzYgLLlmMudZyeRFLKny5-H0vCbklajKuP5LXPED1mDWDhSCQpy_kkSB0EDD7ZFdHJumn34V_m68fJTJNxqyadBy9GSyf9B27dKKld1FnI8CMBL7OlNA84LOEWl; path=/; secure; samesite=none; Partitioned"
                 },
                 {
                   "key": "x-content-type-options",
@@ -10249,7 +10279,9 @@
                   ],
                   "raw": "{{baseUrl}}/produtos/999"
                 }
-              }
+              },
+              "code": 404,
+              "status": "Not Found"
             }
           ]
         },
@@ -10397,7 +10429,9 @@
                   ],
                   "raw": "{{baseUrl}}/vendedores/999"
                 }
-              }
+              },
+              "code": 404,
+              "status": "Not Found"
             }
           ]
         },
@@ -10573,7 +10607,9 @@
                   ],
                   "raw": "{{baseUrl}}/categorias/999"
                 }
-              }
+              },
+              "code": 404,
+              "status": "Not Found"
             }
           ]
         },
@@ -10721,7 +10757,9 @@
                   ],
                   "raw": "{{baseUrl}}/encomendas/999"
                 }
-              }
+              },
+              "code": 404,
+              "status": "Not Found"
             }
           ]
         },
@@ -10895,7 +10933,9 @@
                   ],
                   "raw": "{{baseUrl}}/produtos"
                 }
-              }
+              },
+              "code": 404,
+              "status": "Not Found"
             }
           ]
         },
@@ -11045,7 +11085,9 @@
                   ],
                   "raw": "{{baseUrl}}/produtos/999/avaliacoes"
                 }
-              }
+              },
+              "code": 404,
+              "status": "Not Found"
             }
           ]
         }
@@ -11121,10 +11163,6 @@
                 {
                   "key": "pragma",
                   "value": "no-cache, no-cache"
-                },
-                {
-                  "key": "set-cookie",
-                  "value": ".Tunnels.Relay.WebForwarding.Cookies=CfDJ8NJJuTEdEi5KqensronCVW3KJ1oE9N_0A_rM_LKGjGw1Xke_L7yoK7MENkJ5vJIRcKT4T4nMZmp40tT5QwmJ2iAXY61MlqowlnSTmeD6PXBt5i6EwDIjaVPERgIC6XXg4_Xpms4c8WneB_toy9c7wHE6G8wPaveCxpwTv_gVS-cSQoWtpGeJirqIXrECKtElC6AdDZwtVDqiLmEdcraH5PnXIMLta-nxW6jfhWgBdDgPFd6rJWDgxeZ2i4lnwc1vS4srJbWL_JW-tEt-GNpOcQUFnjs04WNy12turwYguaP3oQ0OoPfRyyY8dCFUBwpDvwnqohw_jkMexzPEaiK09KQ6ybW-jz2XghUyMh7kxXW9nIJD-nmJtz-b4zhNfrxUObRw3jUQX0naeinpN5fObtJl3iqhlVsicH_NRkfAQ20cq1bn1UZLelHNvKazBlYEk4DT5YuugZ0WhElYxrsXhSkLeYS-JOn25X7QHCClzZTYZ39OJEU_9nfQP4qhSTifComcsRl1wrAG8L_5S1847kOX6BifAcCNyoUnh3jz-e9qQi1nawEdm-2Ph4HeL4l6IOkycgJko9qVFNJQUtkPQbkoQL3DaSAAQae6L8xQoI9C0P0yIKKVVODv0jn-KS9GTq4llnxp387pOzKcaZTjLw7l2pBy0GNtTtJylZ9bs_n5epr5oyZQxKeD0cDShKo8RAtt18FdhpnJSplVwFg3IVFFCp1ehawWKyCKIm57_XMKl-PEJyE4XqPBR-srD2c6sfEaDdS8H5ldwVXwE4Cyb4KVrMe0Sa-yptjjVjeyFpSmgCUDb9kjX7a7m8WwR0DLa07m58r1n9ZdKNUjNGKM_ZRqHPQe8yYpMBN5TbOMb1Tjs63GOgN470N99ZeV58ySK9fFtILztb3tg_VIhabtdNcrADWtb-EQqQxYFo_rLKI-Snmd8aHkoJnyKgZ1jtE_RJZKcfLu3ubvzp2aA9h2UngZYpshUm048A2BsXSo80Fa; path=/; secure; samesite=none; Partitioned"
                 },
                 {
                   "key": "x-content-type-options",
@@ -11204,7 +11242,9 @@
                   ],
                   "raw": "{{baseUrl}}/produtos"
                 }
-              }
+              },
+              "code": 200,
+              "status": "OK"
             }
           ]
         },
@@ -11275,10 +11315,6 @@
                 {
                   "key": "pragma",
                   "value": "no-cache"
-                },
-                {
-                  "key": "set-cookie",
-                  "value": ".Tunnels.Relay.WebForwarding.Cookies=CfDJ8NJJuTEdEi5KqensronCVW0zp4SBLXpS-LGV8GBZv9C1Qe8--7Rpsjt7A8LMe-A4qN76dyG-jOs4TW1X4PdFEg3rOVVBNUKhuEeeWp4jtP5vTUtNs-9TyGvXukbC-YlaalVL8CElOSfNHteLsThneuq4h0W0JHt-_c4qE6r2GbV_H5XRiXfD2SRr9DAtuQMyDlWK572NhA5fMmmV4canlloPTWWl55WWdEWXkDVI8Ly4vhGdU0BeCUB-_9bPwPW8b_--4POKDzgtyCAVepg1P39A0IqTOGH7iol9eetOncxMjfkIRkwchN7ekW9Faa5GpDpH7bzuJuDwcDUsToVldhCnja2ufT3AtatYqpgwdENwy3JHwQSENBiRxYe9kAjYiqx85wRcH13G3ftu9z5Rmd1TnzOqv1V3A_gzsyyN7_y35QG1fUsD55xRBah5gcGqYlfB6JDbBRhC5jKW9wvzvjDSTwTgdN2M8RnidFd3dSgUrriNTrQrMNR1uMQvdUZWfTBOWdC1aQagm1PYonFIk8174nQ5Cb-qModQnmN7mxf_-qMiptEHgTeuM0H5SDIhosu9iaLs4NCeby4nPnATDNd7TKFx7f18p4B8N-kS_aPWeNEHOAYKhTaV7hV06rb9_eldAmItMV91TwJ_yc-18lWgX2a-WNf_09-1W0L_xX0AFvbD53DnQKf8PgdWrw-R_WAh8_ivvsNWyL1f3zLiuKkZ96YgeUI6S7EowcaOo4OLKcmprc_mHlGirVW0Dr7KQpdW7ZbP35FyC-Y_KApWV3giR5kHe4Eq4-bxasquOjs3xhGnl-okOY7Y9S7KIt53xo8bs4NbgeEvRe7LD-MTZ95vMh-zXvY-vnCBzj23VK6-ueuEgezbGqiS_B-fDPSU3iItLLt-NfWlMbo_QC9MAcpQD2G2mb1S-amrcL47aDQ1DMJgtQBSk5b0grJwLVdHIuikzuQlDvWi1bKhfQLsvGPf_pnR6RBaqX435BqkHIo_; path=/; secure; samesite=none; Partitioned"
                 },
                 {
                   "key": "x-content-type-options",
@@ -11358,7 +11394,9 @@
                   ],
                   "raw": "{{baseUrl}}/produtos"
                 }
-              }
+              },
+              "code": 200,
+              "status": "OK"
             }
           ]
         },
@@ -11508,7 +11546,9 @@
                   ],
                   "raw": "{{baseUrl}}/produtos"
                 }
-              }
+              },
+              "code": 200,
+              "status": "OK"
             }
           ]
         }
@@ -11655,7 +11695,9 @@
                   ],
                   "raw": "{{baseUrl}}/produtos"
                 }
-              }
+              },
+              "code": 401,
+              "status": "Unauthorized"
             }
           ]
         },
@@ -11672,7 +11714,7 @@
                 {
                   "key": "password",
                   "type": "string",
-                  "value": "{{vault:auth_password_11st}}"
+                  "value": "senha-errada"
                 }
               ],
               "type": "basic"
@@ -11809,7 +11851,9 @@
                   ],
                   "raw": "{{baseUrl}}/produtos"
                 }
-              }
+              },
+              "code": 401,
+              "status": "Unauthorized"
             }
           ]
         }
@@ -11899,10 +11943,6 @@
                 {
                   "key": "pragma",
                   "value": "no-cache"
-                },
-                {
-                  "key": "set-cookie",
-                  "value": ".Tunnels.Relay.WebForwarding.Cookies=CfDJ8NJJuTEdEi5KqensronCVW2jmAjYIXWjigMWgoBIXHpOyD8R9yWI9R21oquCvn6DoqFCV9QhuRN0JeSsnUU7adKu711YiodI3ag-5axml4XDVEHXpgD5KReoHOevInRKUKaPH1zDwV-ez3JX8lSvF0pqWJj0sZ3TmmY7WJacEwtSpuaYJyaLvbCkwU-uy3RGtmF9RsnvtznZUThQiWbPD62C3BHQVEKr-mkiLZ4Wp6a2MFWwryIWWksipHjJE1zPum3UohkCFJJFAGl33hmGIiDGlgbGbqNFC4JFWRLqVf_hHLHDRz4JuZUumW9v0crPBozYwL4vp4LK1znkxu-7alGvEHbd1RA-uqbP1pLdyCLjt58QUIsZjvYde9sxDuCMtH-ljemM8PbyF0UtzOu6rmtQ8VETTzzSN6iBxz1Cjg_HGUwBCSSk97FlWbRnzbh1py-_7kGiNady7cZZuzB7KUtQ9szp3QrXVWTN-hex0QuPEhCMAmkrtXab-sY6pG9AUJSEN8aUAmKuNFOD1U89n3rKkWLKr4CgB73x05vkVahZGan4o66NJul8DHafM-232speSsnERP6OGjNItYH89GcaQOKpXUZh6ACHIv3A2ksZ2lK0C_evDtQGF78U_ZbhA2GYObWzFG9dXadUbvnrLUjnEmeBZTPwd6iUWpRF_5M1AMsWLDR8goJCm5PnH5Ni1ylqUYPaFVfuefiMB_T_iF2Ofs8516AfshRUQYxSk6asWs7qipeBFah1bBq2Es09PlhZwRQEo-curQsnzIV3b2uhT4lsb58AwegLE180hHJ3NCZnj6IHEUIn0IdClIyMqk00svZFV4Q3PX6I3EaL31JTs_23V6G9EBb_9npVWqFeN5tBkCoyaMBmjrC6VFDlDF9jy1S3iGNaLDrGDaqkKGQCgsBnGhjJGXhY_CtMN7-4TIsMRTDJAkvrWHAKwLnCDvJ28OEImBrF9acg7KULeOTVM6nSyGfTvXi65lccWZi4; path=/; secure; samesite=none; Partitioned"
                 },
                 {
                   "key": "x-content-type-options",
@@ -11996,7 +12036,9 @@
                   ],
                   "raw": "{{baseUrl}}/produtos"
                 }
-              }
+              },
+              "code": 403,
+              "status": "Forbidden"
             }
           ]
         },
@@ -12174,7 +12216,9 @@
                   ],
                   "raw": "{{baseUrl}}/categorias"
                 }
-              }
+              },
+              "code": 403,
+              "status": "Forbidden"
             }
           ]
         },
@@ -12326,7 +12370,9 @@
                   ],
                   "raw": "{{baseUrl}}/vendedores/4"
                 }
-              }
+              },
+              "code": 403,
+              "status": "Forbidden"
             }
           ]
         },
@@ -12480,7 +12526,9 @@
                   ],
                   "raw": "{{baseUrl}}/vendedores/1/painel"
                 }
-              }
+              },
+              "code": 403,
+              "status": "Forbidden"
             }
           ]
         },
@@ -12553,10 +12601,6 @@
                 {
                   "key": "pragma",
                   "value": "no-cache"
-                },
-                {
-                  "key": "set-cookie",
-                  "value": ".Tunnels.Relay.WebForwarding.Cookies=CfDJ8NJJuTEdEi5KqensronCVW3AuFksgS7KcigsNYL4WjClHJklD_pQJsjAfpxpZUbY2P7oVntdFTvej8AHioWUiE3OFiQSsKBnEjbSXon2uh6bjhhZC0A6jVnJa7WgIIvYu0vE_Kal2EFE5zWsxUB2FcZTA7NdneezGg_JQl95a9ftTP1gD3UQiOeCU34iazrXUfdWmBmLXHToVatYfr5en6JDQofFZlX_PPT-4R1VkqONLUA6oIlA0QPx3_LhZZgRoMR_9-1uTXe9KSEPImQNdmcF3MlwMTguaUo7VWF2wjA2yL9ri1r1kzAv92uGvNZxAegTg5Wec6cPDUeqPobrOBZTlvd-Th0i81EZW7u3CSM3KcFw79E0nlwQJq97zgWQXPHKw_irPvWZ5CNRgmTCDaUVVJOBzgDT1Gvd_2vW9NBd9OkpsWtleaRztnVkySFL1o5DVv33sLZPpeSPUnZvzLTzD3yUi6TjLeIfZV30U9CpgesM-ks_tlrnBK8p9UEzwWYBtX43zEjXcGpoA8ZQUCxMLi5Qr9FueD8Dzjlgy5tSHMwSgUt1uE1vV2SXp704hqmxTsmHxRuKkPAJJUiMXSVclrlkEjhUpS1NvpT77MqNIIqSRA-plN9DzLpQMAYFDxS0BQ1tto1QqRusnuPOKnO2imOuyeVebHNoQxes6RSWY-wbcoTqIdSH3QucCu9jEDxupEN7yl-v7eIUWS3PlE8XIFTrZKKGpWFu-B5ecoTm9jLiAjofeqE-StaA9ENiVFAZc2lOJri7nQpIleoUiQTwix9bjqYhmQUnqooA2Gwt-j6GDoLJf4LYeN0HbMm58Nm0YQnXVDzLaKv7M59JpFxO1_ZCHKp1ptyEN4mVLrL5sKJUQ1MQk4Twrxc2luLFGe3wd9IwLU27lcsaH26B5F2zDGhHD04wKB_nbX1cgp6-zJZP44APV6i1UyAVBm6hWLGYpoLP6u5dkAuYNieJGonS12-NQoTnIiUhZOz3Jzd4; path=/; secure; samesite=none; Partitioned"
                 },
                 {
                   "key": "x-content-type-options",
@@ -12638,7 +12682,9 @@
                   ],
                   "raw": "{{baseUrl}}/encomendas/2/confirmar"
                 }
-              }
+              },
+              "code": 403,
+              "status": "Forbidden"
             }
           ]
         },
@@ -12816,7 +12862,9 @@
                   ],
                   "raw": "{{baseUrl}}/avaliacoes"
                 }
-              }
+              },
+              "code": 403,
+              "status": "Forbidden"
             }
           ]
         }
@@ -13000,7 +13048,9 @@
                   ],
                   "raw": "{{baseUrl}}/encomendas"
                 }
-              }
+              },
+              "code": 201,
+              "status": "Created"
             }
           ]
         },
@@ -13154,7 +13204,9 @@
                   ],
                   "raw": "{{baseUrl}}/vendedores/1/encomendas"
                 }
-              }
+              },
+              "code": 200,
+              "status": "OK"
             }
           ]
         },
@@ -13227,10 +13279,6 @@
                 {
                   "key": "pragma",
                   "value": "no-cache"
-                },
-                {
-                  "key": "set-cookie",
-                  "value": ".Tunnels.Relay.WebForwarding.Cookies=CfDJ8NJJuTEdEi5KqensronCVW34HjY8vOzdu9yXRwW9aRGtRuJvmDx9Xgg-XH9CGHiuy5TfU9X5ic3sXRbsiX7Wvtgqp9X8XsrxI0LSFUKb790VacemYJyfWCYjshsY-IWi8NlgwzDNcutk-qoyL7gDtGkTySZKRSDoi3z50M3ig1sHSvtQE7RruwnDaaZEdCj-3x5n_mEC4Et9BY4WZeThMnvThwfGqy_ZTcKNqXwVl4oKuiwinJt-nDbotKBPcSJRECMxW8mJPL1Mk89RqHJCQGs1wu6wx5DxlTQXDowwIgE3FJ117znaq-Yo0ta4TtkfaCT1fiB2LWHK0Szgrw3rOmFqm_vsDOD-u0sL6-5cWOwkQA2Xo-1-vE2QI2xklXpqLa5DfGUCQCcYLP_fDKL3Z5hcR1eCT-b129CrHoGpKF_DmMHjHBEpptik7ChfQZImIcB_e5AYAMXGA-W0OyGzIBXQKJfIg5X_r5YbDlIyRi60x9KGdHF4b0hSMg0O_Ceq7xkHPnfz4COMSwd5ej4mw3S9fGEpvNFepbLPmaIUSDhdrvFPyJoATMt5viVx6obt0HZB2ZzbHdKJ02Wt7D545Kg_-0bBALCja0gv2Bj72ph3bBiiVwQOJJw09_hcUaiUJlkKGQ85WF3IXLg1Mz7T-9sbBprfRviLrSJgevtGXaNsp_SGlvqxWEpG5fqaFo_9zP9CDqyHOuLJ-LloLrOrKy5ZE9XJXfmBUuFeMkGAAYzIB9TDiCKnKQ2ecVBv6NFc7W0simNg_HbOjLCd4tw7B9-96j1bsc2N-UdUiQQbmeQHOIVyKOu_SrFRl928RT2Gbjw8qUOzFTbBJ5MpmG1TWZ5BjQMTA46_yzCSBQkNOSfT8KnPIM3ljh--GMCiTxdcpwCLTNm37HQ30E1gnmqq5HZzBMQhZeAWx_ZKcpV17TPXxrIGjZeSBoIx0jRDoEQERcUYjM2K_5U4Kh9pSG9tIsqh6cLO-aFjLmHzsYLJI_7-; path=/; secure; samesite=none; Partitioned"
                 },
                 {
                   "key": "x-content-type-options",
@@ -13312,7 +13360,9 @@
                   ],
                   "raw": "{{baseUrl}}/encomendas/{{encomendaFluxoId}}/confirmar"
                 }
-              }
+              },
+              "code": 200,
+              "status": "OK"
             }
           ]
         },
@@ -13466,7 +13516,9 @@
                   ],
                   "raw": "{{baseUrl}}/encomendas/{{encomendaFluxoId}}/entregar"
                 }
-              }
+              },
+              "code": 200,
+              "status": "OK"
             }
           ]
         },
@@ -13616,7 +13668,9 @@
                   ],
                   "raw": "{{baseUrl}}/encomendas/{{encomendaFluxoId}}/cancelar"
                 }
-              }
+              },
+              "code": 409,
+              "status": "Conflict"
             }
           ]
         },
@@ -13770,7 +13824,9 @@
                   ],
                   "raw": "{{baseUrl}}/encomendas/2/cancelar"
                 }
-              }
+              },
+              "code": 200,
+              "status": "OK"
             }
           ]
         },
@@ -13848,10 +13904,6 @@
                 {
                   "key": "pragma",
                   "value": "no-cache"
-                },
-                {
-                  "key": "set-cookie",
-                  "value": ".Tunnels.Relay.WebForwarding.Cookies=CfDJ8NJJuTEdEi5KqensronCVW2oBKwyKkFX22tNZP_BFE-ngUXIaRyDcX8lHrEZ-G4DF74zBAKiOS8bYfRsCVXczgiZXEUQOXxGl6HFBY0MUX544IsSK1ZmJ_zuSFhW5k6RFXXaPBgJefTEmg-qXCepmakabUXJM66UtD20IfKo5nofUg7ecrZMEpE9D_DJ3QNAJqih-y5Kyxu-pdrCIAnr7ekm7PaCUB2-MGyPhAqMrBS95DaJKKNeJhc894N7SADbOeAAZV1j3u8Lbn_jyOnKYUCbRmeIv6LBZUbYmaDFoUwZX8o9OtSFDnOVk169s6oF-vVbgZKq-hHNz4wlM2ACfYNGOYsQBTdsqAm-D19oxi-3ovB0azgSa6TuVOm795BEDS2iIiUxz3_jShp4L7pzV_Jsqyd9bG1qIWoMWsbfjggRw7tBwXrTFthEh2fysrOlXWwudTtRYYKYw7AqfhB4dYDzGBDktr9xwjMD3TWTFPDqg3US-2xcR_LE12RxcXMiIv32GY8HfQdZDZChCFhj6Pp2Y6Zjzw1L0RjX1yr2FEegmsO-9k6xEDFcTom7rzB3t_FFvsjgRn3qszB2X0NfGNE_CIf9chiTPXSQVgJgJNAcyq-GWSlgwBULP3FulFvfkRiLk-E0y-AADEN8Lne8na9fSwB7VHtREuj_qE8ZIbA3JbmlAd142giddFboqAbBntolxrIg4u-s2vGQMpzAPlxoHUYhuDq5qvigrngrDE2Igsj-k5N8KQyRPa-I33hjYT3wDAV87v8PL_c_WWMrL4wTCi4TJUaE34Gj5xBkERsEUU-oj8s6lT5FBzMphg7v2jGwbkBGSHLnt8-ZZap2RjgoF4obRtMnmDnL2GOmbnIN3Qv1HXB9XAU0NsuhdxUmskKACc6-4s1K0eoBjLbXwsYTnSepqEHBI7zJEoNqZvE4DGC2n1CoM4rCt4mJs96w5R5VtO7klMu6kgcTmjyopFvy2lhRezQjwRaY2iJXrwAi; path=/; secure; samesite=none; Partitioned"
                 },
                 {
                   "key": "x-content-type-options",
@@ -13938,7 +13990,9 @@
                   ],
                   "raw": "{{baseUrl}}/vendedores/1/painel"
                 }
-              }
+              },
+              "code": 200,
+              "status": "OK"
             }
           ]
         }
