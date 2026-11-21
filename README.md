@@ -1,7 +1,13 @@
 # UniFood — Backend
+## Integrantes
 
-Backend REST do **UniFood**, o catálogo de comidas vendidas por alunos dentro da faculdade (Projeto Integrador IV — Engenharia de Software, 4º termo, disciplina Padrões de Desenvolvimento Web).
-
+| Nome completo | RA |
+|---|---|
+| Isabelly Giovana Batista da Silva | 273258 |
+| Isabella Fernanda Camargo da Cruz | 273608 |
+| Vitória Teixeira Salgado | 273885 |
+ 
+Backend do **UniFood**, o catálogo de comidas vendidas por alunos dentro da faculdade
 ## Descrição
 
 No UniFood, quem vende cadastra seus produtos e informa os dias, horários e locais em que atende no campus. Quem compra consulta o catálogo, avalia os produtos e faz **encomendas** para retirar com o vendedor em um dos horários de atendimento. O vendedor acompanha tudo por um **painel** com os indicadores do negócio.
@@ -154,10 +160,3 @@ A tabela completa de permissões está em [docs/documentacao-api.md](docs/docume
 - [Diagrama de classes](docs/modelo-dados.png)
 - [Documentação da API](docs/documentacao-api.md)
 
-## Integrantes
-
-| Nome completo | RA |
-|---|---|
-| Isabelly Giovana Batista da Silva | 273258 |
-| Isabella Fernanda Camargo da Cruz | 273608 |
-| Vitória Teixeira Salgado | 273885 |
