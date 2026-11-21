@@ -15,7 +15,6 @@ import br.edu.unifio.unifood.repositorios.HorarioAtendimentoRepositorio;
 
 @Service
 public class HorarioAtendimentoServico {
-    // Ordem da semana (SEGUNDA, TERCA, ...) e depois pelo horário de início
     private static final Comparator<HorarioAtendimento> ORDEM_SEMANA =
             Comparator.comparing(HorarioAtendimento::getDia).thenComparing(HorarioAtendimento::getInicio);
 
@@ -52,7 +51,6 @@ public class HorarioAtendimentoServico {
         return horarioRepositorio.save(horario);
     }
 
-    // Na edição o horário continua do mesmo vendedor
     @Transactional
     public HorarioAtendimento atualizar (Integer id, HorarioAtendimento dados) {
         HorarioAtendimento horario = buscarPorId(id);
@@ -73,7 +71,6 @@ public class HorarioAtendimentoServico {
         if (!horario.getFim().isAfter(horario.getInicio())) {
             throw new RequisicaoInvalidaExcecao("O horário de fim deve ser depois do horário de início");
         }
-        // Regra: o vendedor não pode estar em dois lugares ao mesmo tempo
         long conflitos = horarioRepositorio.contarConflitos(horario.getVendedor().getId(), horario.getDia(),
                 horario.getInicio(), horario.getFim(), idIgnorado);
         if (conflitos > 0) {

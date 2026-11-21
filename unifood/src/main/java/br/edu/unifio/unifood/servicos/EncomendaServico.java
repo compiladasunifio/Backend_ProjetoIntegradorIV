@@ -22,7 +22,6 @@ import br.edu.unifio.unifood.excecoes.RequisicaoInvalidaExcecao;
 import br.edu.unifio.unifood.repositorios.EncomendaRepositorio;
 import br.edu.unifio.unifood.repositorios.HorarioAtendimentoRepositorio;
 
-// Funcionalidade específica do PI: encomenda de produtos para retirada no campus.
 @Service
 public class EncomendaServico {
     @Autowired
@@ -45,7 +44,6 @@ public class EncomendaServico {
         return encomendaRepositorio.findByStatusOrderByDataRetiradaAscHoraRetiradaAsc(status);
     }
 
-    // Agenda de retiradas do vendedor
     public List<Encomenda> listarPorVendedor (Integer vendedorId) {
         vendedorServico.buscarPorId(vendedorId);
         return encomendaRepositorio.findByProdutoVendedorIdOrderByDataRetiradaAscHoraRetiradaAsc(vendedorId);
@@ -63,23 +61,19 @@ public class EncomendaServico {
         }
         Produto produto = produtoServico.buscarPorId(encomenda.getProduto().getId());
 
-        // Regra 1: produto indisponível não aceita encomenda
         if (!Boolean.TRUE.equals(produto.getDisponivel())) {
             throw new RegraNegocioExcecao("O produto '" + produto.getNome() + "' está indisponível no momento e não aceita encomendas");
         }
-        // Regra 2: a retirada precisa cair em um horário de atendimento do vendedor
         validarRetirada(produto.getVendedor(), encomenda.getDataRetirada(), encomenda.getHoraRetirada());
 
         encomenda.setId(null);
         encomenda.setProduto(produto);
         encomenda.setStatus(StatusEncomenda.PENDENTE);
         encomenda.setDataCriacao(LocalDateTime.now());
-        // Regra 3: o valor total é calculado pelo servidor (preço atual x quantidade)
         encomenda.setValorTotal(calcularValor(produto, encomenda.getQuantidade()));
         return encomendaRepositorio.save(encomenda);
     }
 
-    // Regra: só dá para alterar a encomenda enquanto ela está PENDENTE (o produto não muda)
     @Transactional
     public Encomenda atualizar (Integer id, Encomenda dados) {
         Encomenda encomenda = buscarPorId(id);
@@ -99,25 +93,21 @@ public class EncomendaServico {
         return encomendaRepositorio.save(encomenda);
     }
 
-    // Vendedor aceita a encomenda
     @Transactional
     public Encomenda confirmar (Integer id) {
         return mudarStatus(id, StatusEncomenda.CONFIRMADA);
     }
 
-    // Vendedor entregou o produto ao cliente
     @Transactional
     public Encomenda entregar (Integer id) {
         return mudarStatus(id, StatusEncomenda.ENTREGUE);
     }
 
-    // Cliente ou vendedor desiste da encomenda
     @Transactional
     public Encomenda cancelar (Integer id) {
         return mudarStatus(id, StatusEncomenda.CANCELADA);
     }
 
-    // Regra: só encomendas finalizadas (entregues ou canceladas) podem ser apagadas
     @Transactional
     public void excluirPorId (Integer id) {
         Encomenda encomenda = buscarPorId(id);
@@ -130,7 +120,6 @@ public class EncomendaServico {
 
     private Encomenda mudarStatus (Integer id, StatusEncomenda novoStatus) {
         Encomenda encomenda = buscarPorId(id);
-        // Regra: respeitar o fluxo PENDENTE -> CONFIRMADA -> ENTREGUE (ou CANCELADA)
         if (!encomenda.getStatus().podeMudarPara(novoStatus)) {
             throw new RegraNegocioExcecao("Não é possível mudar a encomenda " + id + " de "
                     + encomenda.getStatus() + " para " + novoStatus);

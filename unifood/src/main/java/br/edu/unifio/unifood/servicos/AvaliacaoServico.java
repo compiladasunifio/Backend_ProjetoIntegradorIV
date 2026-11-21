@@ -44,12 +44,10 @@ public class AvaliacaoServico {
         Produto produto = produtoServico.buscarPorId(avaliacao.getProduto().getId());
         avaliacao.setId(null);
         avaliacao.setProduto(produto);
-        // A data é sempre a do dia da publicação
         avaliacao.setData(LocalDate.now());
         return avaliacaoRepositorio.save(avaliacao);
     }
 
-    // Na edição só mudam autor, nota e comentário (o produto e a data ficam os mesmos)
     @Transactional
     public Avaliacao atualizar (Integer id, Avaliacao dados) {
         Avaliacao avaliacao = buscarPorId(id);

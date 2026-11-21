@@ -92,7 +92,6 @@ public class ProdutoServico {
         return produtoRepositorio.save(produto);
     }
 
-    // Chave "disponível / indisponível" do card em "Meus produtos"
     @Transactional
     public Produto alterarDisponibilidade (Integer id, boolean disponivel) {
         Produto produto = buscarPorId(id);
@@ -100,8 +99,6 @@ public class ProdutoServico {
         return produtoRepositorio.save(produto);
     }
 
-    // Excluir um produto apaga as avaliações dele e o histórico de encomendas finalizadas.
-    // Regra: não pode excluir produto com encomendas pendentes ou confirmadas.
     @Transactional
     public void excluirPorId (Integer id) {
         Produto produto = buscarPorId(id);
@@ -114,7 +111,6 @@ public class ProdutoServico {
         produtoRepositorio.delete(produto);
     }
 
-    // Troca os objetos {"id": X} enviados no JSON pelos registros do banco (404 se não existirem)
     private void preencherRelacionamentos (Produto produto, Produto dados) {
         if (dados.getVendedor().getId() == null) {
             throw new RequisicaoInvalidaExcecao("Informe o id do vendedor. Ex.: \"vendedor\": {\"id\": 1}");
@@ -127,7 +123,6 @@ public class ProdutoServico {
         produto.setVendedor(vendedor);
         produto.setCategoria(categoria);
 
-        // Regra: sem localização informada, o produto fica onde o vendedor costuma ficar no campus
         if (produto.getLocalizacao() == null || produto.getLocalizacao().isBlank()) {
             produto.setLocalizacao(vendedor.getLocalizacao());
         }

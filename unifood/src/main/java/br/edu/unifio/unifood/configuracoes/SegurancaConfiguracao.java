@@ -26,16 +26,9 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-// Autenticação HTTP Basic com usuários em memória e três perfis:
-//   ADMIN    -> administração do campus: tudo, inclusive categorias e exclusão de vendedores
-//   VENDEDOR -> aluno que vende: produtos, horários, painel e andamento das encomendas
-//   CLIENTE  -> quem compra: avaliações e encomendas
-// Todas as rotas exigem login (401 sem credenciais ou com senha errada).
-// Operações fora do perfil devolvem 403.
 @Configuration
 @EnableWebSecurity
 public class SegurancaConfiguracao {
-
     private static final String ADMIN = "ADMIN";
     private static final String VENDEDOR = "VENDEDOR";
     private static final String CLIENTE = "CLIENTE";
@@ -43,43 +36,36 @@ public class SegurancaConfiguracao {
     @Bean
     public SecurityFilterChain filtroSeguranca (HttpSecurity http) throws Exception {
         http
-            // API REST sem sessão e sem formulário: CSRF não se aplica
             .csrf(csrf -> csrf.disable())
             .cors(Customizer.withDefaults())
             .sessionManagement(sessao -> sessao.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
             .authorizeHttpRequests(rotas -> rotas
                 .requestMatchers("/error").permitAll()
 
-                // Categorias: só o ADMIN cadastra, altera e exclui
                 .requestMatchers(HttpMethod.POST, "/categorias/**").hasRole(ADMIN)
                 .requestMatchers(HttpMethod.PUT, "/categorias/**").hasRole(ADMIN)
                 .requestMatchers(HttpMethod.DELETE, "/categorias/**").hasRole(ADMIN)
 
-                // Vendedores: painel só para vendedor/admin; excluir conta só o ADMIN
                 .requestMatchers(HttpMethod.GET, "/vendedores/*/painel").hasAnyRole(VENDEDOR, ADMIN)
                 .requestMatchers(HttpMethod.POST, "/vendedores/**").hasAnyRole(VENDEDOR, ADMIN)
                 .requestMatchers(HttpMethod.PUT, "/vendedores/**").hasAnyRole(VENDEDOR, ADMIN)
                 .requestMatchers(HttpMethod.DELETE, "/vendedores/**").hasRole(ADMIN)
 
-                // Produtos e horários: quem vende
                 .requestMatchers(HttpMethod.POST, "/produtos/**", "/horarios/**").hasAnyRole(VENDEDOR, ADMIN)
                 .requestMatchers(HttpMethod.PUT, "/produtos/**", "/horarios/**").hasAnyRole(VENDEDOR, ADMIN)
                 .requestMatchers(HttpMethod.PATCH, "/produtos/**").hasAnyRole(VENDEDOR, ADMIN)
                 .requestMatchers(HttpMethod.DELETE, "/produtos/**", "/horarios/**").hasAnyRole(VENDEDOR, ADMIN)
 
-                // Avaliações: quem compra
                 .requestMatchers(HttpMethod.POST, "/avaliacoes/**").hasAnyRole(CLIENTE, ADMIN)
                 .requestMatchers(HttpMethod.PUT, "/avaliacoes/**").hasAnyRole(CLIENTE, ADMIN)
                 .requestMatchers(HttpMethod.DELETE, "/avaliacoes/**").hasAnyRole(CLIENTE, ADMIN)
 
-                // Encomendas: cliente cria e edita; vendedor confirma e entrega; todos podem cancelar
                 .requestMatchers(HttpMethod.PATCH, "/encomendas/*/confirmar", "/encomendas/*/entregar").hasAnyRole(VENDEDOR, ADMIN)
                 .requestMatchers(HttpMethod.PATCH, "/encomendas/*/cancelar").authenticated()
                 .requestMatchers(HttpMethod.POST, "/encomendas/**").hasAnyRole(CLIENTE, ADMIN)
                 .requestMatchers(HttpMethod.PUT, "/encomendas/**").hasAnyRole(CLIENTE, ADMIN)
                 .requestMatchers(HttpMethod.DELETE, "/encomendas/**").hasRole(ADMIN)
 
-                // Consultas (GET) liberadas para qualquer usuário autenticado
                 .anyRequest().authenticated())
             .httpBasic(basic -> basic.authenticationEntryPoint(naoAutenticado()))
             .exceptionHandling(excecoes -> excecoes
@@ -89,7 +75,6 @@ public class SegurancaConfiguracao {
         return http.build();
     }
 
-    // Usuários de teste (somente para esta atividade)
     @Bean
     public UserDetailsService usuarios (PasswordEncoder codificador) {
         return new InMemoryUserDetailsManager(
@@ -103,7 +88,6 @@ public class SegurancaConfiguracao {
         return new BCryptPasswordEncoder();
     }
 
-    // Libera o front-end Angular (local e publicado) para chamar a API
     @Bean
     public CorsConfigurationSource configuracaoCors () {
         CorsConfiguration cors = new CorsConfiguration();
@@ -115,7 +99,6 @@ public class SegurancaConfiguracao {
         return origem;
     }
 
-    // 401: sem credenciais ou usuário/senha incorretos
     private AuthenticationEntryPoint naoAutenticado () {
         return (requisicao, resposta, excecao) -> {
             resposta.setHeader("WWW-Authenticate", "Basic realm=\"UniFood\"");
@@ -124,7 +107,6 @@ public class SegurancaConfiguracao {
         };
     }
 
-    // 403: autenticado, mas o perfil não tem permissão para a operação
     private AccessDeniedHandler acessoNegado () {
         return (requisicao, resposta, excecao) -> escreverErro(requisicao, resposta,
                 HttpServletResponse.SC_FORBIDDEN, "Forbidden",

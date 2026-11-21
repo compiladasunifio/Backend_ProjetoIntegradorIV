@@ -32,7 +32,6 @@ public class EncomendaRecurso {
         return encomendaServico.listar();
     }
 
-    // Ex.: /encomendas/status/PENDENTE
     @GetMapping ("status/{status}")
     public List<Encomenda> listarPorStatus (@PathVariable StatusEncomenda status) {
         return encomendaServico.listarPorStatus(status);

@@ -16,7 +16,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import br.edu.unifio.unifood.entidades.Produto;
 
-// Usa os dados do import.sql. @Transactional desfaz as alterações ao fim de cada teste.
 @SpringBootTest
 @Transactional
 public class ProdutoRepositorioTests {
@@ -65,7 +64,6 @@ public class ProdutoRepositorioTests {
 
     @Test
     public void deveExcluirUmProdutoSemDependencias () {
-        // Produto 6 (suco) não tem avaliações nem encomendas
         assertTrue(produtoRepositorio.existsById(6));
         produtoRepositorio.deleteById(6);
         assertFalse(produtoRepositorio.existsById(6));
@@ -89,7 +87,6 @@ public class ProdutoRepositorioTests {
 
     @Test
     public void deveBuscarDisponiveisPorFaixaDePreco () {
-        // A coxinha (6,00) está indisponível e não deve aparecer
         List<Produto> produtos = produtoRepositorio.buscarDisponiveisPorFaixaDePreco(new BigDecimal("5"), new BigDecimal("12"));
 
         assertEquals(4, produtos.size());

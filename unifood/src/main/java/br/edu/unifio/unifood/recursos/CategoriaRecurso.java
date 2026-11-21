@@ -39,7 +39,6 @@ public class CategoriaRecurso {
         return categoriaServico.buscarPorId(id);
     }
 
-    // Produtos de uma categoria
     @GetMapping ("{id}/produtos")
     public List<Produto> listarProdutos (@PathVariable Short id) {
         return produtoServico.listarPorCategoria(id);

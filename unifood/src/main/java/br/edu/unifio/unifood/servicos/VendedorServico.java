@@ -58,7 +58,6 @@ public class VendedorServico {
     public Vendedor salvar (Vendedor vendedor) {
         vendedor.setId(null);
         vendedor.setEmail(vendedor.getEmail().trim().toLowerCase());
-        // Regra: e-mail único entre os vendedores
         if (vendedorRepositorio.existsByEmailIgnoreCase(vendedor.getEmail())) {
             throw new RegraNegocioExcecao("Já existe um vendedor cadastrado com o e-mail " + vendedor.getEmail());
         }
@@ -80,8 +79,6 @@ public class VendedorServico {
         return vendedorRepositorio.save(vendedor);
     }
 
-    // Excluir a conta apaga junto os produtos (com avaliações e encomendas finalizadas) e os horários.
-    // Regra: não pode excluir se houver encomendas pendentes ou confirmadas para entregar.
     @Transactional
     public void excluirPorId (Integer id) {
         Vendedor vendedor = buscarPorId(id);
@@ -98,7 +95,6 @@ public class VendedorServico {
         vendedorRepositorio.delete(vendedor);
     }
 
-    // Funcionalidade do PI: painel com os indicadores do negócio do vendedor
     public PainelVendedor gerarPainel (Integer id) {
         Vendedor vendedor = buscarPorId(id);
 

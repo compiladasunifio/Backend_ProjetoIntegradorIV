@@ -16,7 +16,6 @@ import jakarta.validation.constraints.Size;
 import lombok.Getter;
 import lombok.Setter;
 
-// Comida à venda no catálogo. Pertence a um vendedor e a uma categoria.
 @Entity
 @Getter
 @Setter
@@ -44,12 +43,10 @@ public class Produto {
     @Column (length = 500)
     private String imagemUrl;
 
-    // Se o produto está à venda hoje. Produto indisponível não recebe encomendas.
     @NotNull (message = "Informe se o produto está disponível")
     @Column (nullable = false)
     private Boolean disponivel = true;
 
-    // Se vier vazio, o serviço usa a localização do vendedor
     @Size (max = 100, message = "A localização deve ter no máximo 100 caracteres")
     @Column (nullable = false, length = 100)
     private String localizacao;

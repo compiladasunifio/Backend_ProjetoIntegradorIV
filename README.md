@@ -158,6 +158,6 @@ A tabela completa de permissões está em [docs/documentacao-api.md](docs/docume
 
 | Nome completo | RA |
 |---|---|
-| _preencher_ | _preencher_ |
-| _preencher_ | _preencher_ |
-| _preencher_ | _preencher_ |
+| Isabelly Giovana Batista da Silva | 273258 |
+| Isabella Fernanda Camargo da Cruz | 273608 |
+| Vitória Teixeira Salgado | 273885 |

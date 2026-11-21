@@ -18,7 +18,6 @@ import jakarta.validation.constraints.Size;
 import lombok.Getter;
 import lombok.Setter;
 
-// Nota de 1 a 5 e comentário deixados por quem comprou um produto.
 @Entity
 @Getter
 @Setter
@@ -42,12 +41,10 @@ public class Avaliacao {
     @Column (length = 500)
     private String comentario;
 
-    // Preenchida pelo serviço com a data do dia (o cliente não envia)
     @JsonProperty (access = JsonProperty.Access.READ_ONLY)
     @Column (nullable = false)
     private LocalDate data;
 
-    // Obrigatório só no cadastro (conferido no serviço): na edição o produto não muda e não precisa ser enviado
     @ManyToOne (optional = false)
     private Produto produto;
 }

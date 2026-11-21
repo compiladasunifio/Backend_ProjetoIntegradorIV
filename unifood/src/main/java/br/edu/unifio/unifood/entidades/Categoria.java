@@ -10,8 +10,6 @@ import jakarta.validation.constraints.Size;
 import lombok.Getter;
 import lombok.Setter;
 
-// Tipo de comida vendida no campus (Doces, Salgados, Refeições, ...).
-// Usada para filtrar o catálogo.
 @Entity
 @Getter
 @Setter

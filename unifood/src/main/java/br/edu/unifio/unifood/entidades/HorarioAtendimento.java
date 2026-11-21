@@ -18,7 +18,6 @@ import jakarta.validation.constraints.Size;
 import lombok.Getter;
 import lombok.Setter;
 
-// Dia, horário e local em que o vendedor atende no campus.
 @Entity
 @Getter
 @Setter
@@ -47,7 +46,6 @@ public class HorarioAtendimento {
     @Column (nullable = false, length = 100)
     private String local;
 
-    // Obrigatório só no cadastro (conferido no serviço): na edição o vendedor não muda e não precisa ser enviado
     @ManyToOne (optional = false)
     private Vendedor vendedor;
 }

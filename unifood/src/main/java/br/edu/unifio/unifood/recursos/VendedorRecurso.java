@@ -47,7 +47,6 @@ public class VendedorRecurso {
         return vendedorServico.listar();
     }
 
-    // Ex.: /vendedores/busca?negocio=doces
     @GetMapping ("busca")
     public List<Vendedor> buscarPorNomeNegocio (@RequestParam String negocio) {
         return vendedorServico.buscarPorNomeNegocio(negocio);
@@ -58,25 +57,21 @@ public class VendedorRecurso {
         return vendedorServico.buscarPorId(id);
     }
 
-    // "Meus produtos"
     @GetMapping ("{id}/produtos")
     public List<Produto> listarProdutos (@PathVariable Integer id) {
         return produtoServico.listarPorVendedor(id);
     }
 
-    // Horários de atendimento em ordem de dia e hora
     @GetMapping ("{id}/horarios")
     public List<HorarioAtendimento> listarHorarios (@PathVariable Integer id) {
         return horarioServico.listarPorVendedor(id);
     }
 
-    // Agenda de retiradas do vendedor
     @GetMapping ("{id}/encomendas")
     public List<Encomenda> listarEncomendas (@PathVariable Integer id) {
         return encomendaServico.listarPorVendedor(id);
     }
 
-    // Painel com os indicadores do negócio
     @GetMapping ("{id}/painel")
     public PainelVendedor gerarPainel (@PathVariable Integer id) {
         return vendedorServico.gerarPainel(id);

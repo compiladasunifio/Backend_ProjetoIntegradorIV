@@ -26,8 +26,6 @@ import jakarta.validation.constraints.Size;
 import lombok.Getter;
 import lombok.Setter;
 
-// Pedido de um comprador para retirar um produto com o vendedor,
-// em um dia e horário em que ele está atendendo no campus.
 @Entity
 @Getter
 @Setter
@@ -65,7 +63,6 @@ public class Encomenda {
     @Size (max = 255, message = "A observação deve ter no máximo 255 caracteres")
     private String observacao;
 
-    // Campos abaixo são calculados pelo serviço (o cliente não envia)
     @JsonProperty (access = JsonProperty.Access.READ_ONLY)
     @Enumerated (EnumType.STRING)
     @Column (nullable = false, length = 10)
@@ -79,7 +76,6 @@ public class Encomenda {
     @Column (nullable = false)
     private LocalDateTime dataCriacao;
 
-    // Obrigatório só no cadastro (conferido no serviço): na edição o produto não muda e não precisa ser enviado
     @ManyToOne (optional = false)
     private Produto produto;
 }

@@ -38,19 +38,16 @@ public class ProdutoRecurso {
         return produtoServico.listar();
     }
 
-    // Catálogo com "Somente disponíveis"
     @GetMapping ("disponiveis")
     public List<Produto> listarDisponiveis () {
         return produtoServico.listarDisponiveis();
     }
 
-    // Ex.: /produtos/busca?nome=bri
     @GetMapping ("busca")
     public List<Produto> buscarPorNome (@RequestParam String nome) {
         return produtoServico.buscarPorNome(nome);
     }
 
-    // Ex.: /produtos/faixa-preco?minimo=5&maximo=12
     @GetMapping ("faixa-preco")
     public List<Produto> buscarPorFaixaDePreco (@RequestParam BigDecimal minimo, @RequestParam BigDecimal maximo) {
         return produtoServico.buscarPorFaixaDePreco(minimo, maximo);
@@ -77,7 +74,6 @@ public class ProdutoRecurso {
         return produtoServico.atualizar(id, produto);
     }
 
-    // Ex.: PATCH /produtos/3/disponibilidade?disponivel=true
     @PatchMapping ("{id}/disponibilidade")
     public Produto alterarDisponibilidade (@PathVariable Integer id, @RequestParam boolean disponivel) {
         return produtoServico.alterarDisponibilidade(id, disponivel);

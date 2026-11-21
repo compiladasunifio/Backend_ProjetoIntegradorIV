@@ -33,7 +33,6 @@ public class CategoriaServico {
     @Transactional
     public Categoria salvar (Categoria categoria) {
         categoria.setId(null);
-        // Regra: não pode haver duas categorias com o mesmo nome
         if (categoriaRepositorio.existsByNomeIgnoreCase(categoria.getNome())) {
             throw new RegraNegocioExcecao("Já existe uma categoria com o nome '" + categoria.getNome() + "'");
         }
@@ -54,7 +53,6 @@ public class CategoriaServico {
     @Transactional
     public void excluirPorId (Short id) {
         Categoria categoria = buscarPorId(id);
-        // Regra de integridade: categoria com produtos não pode ser excluída
         if (produtoRepositorio.existsByCategoriaId(id)) {
             throw new RegraNegocioExcecao("A categoria '" + categoria.getNome()
                     + "' possui produtos cadastrados. Mova ou exclua os produtos antes de excluir a categoria");

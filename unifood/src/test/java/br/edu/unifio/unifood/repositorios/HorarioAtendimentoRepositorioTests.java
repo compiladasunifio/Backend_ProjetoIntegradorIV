@@ -19,7 +19,6 @@ public class HorarioAtendimentoRepositorioTests {
 
     @Test
     public void deveEncontrarConflitoDeHorario () {
-        // A Isa (vendedor 1) atende segunda das 10:00 às 12:00
         long conflitos = horarioRepositorio.contarConflitos(1, DiaSemana.SEGUNDA, LocalTime.of(11, 0), LocalTime.of(13, 0), 0);
         assertEquals(1, conflitos);
     }

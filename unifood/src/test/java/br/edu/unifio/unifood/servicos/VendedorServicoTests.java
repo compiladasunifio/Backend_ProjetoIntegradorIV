@@ -53,7 +53,6 @@ public class VendedorServicoTests {
 
     @Test
     public void deveExcluirVendedorSemEncomendasEmAbertoComProdutosEHorarios () {
-        // Carol (3): coxinha e horário de quinta, sem encomendas
         vendedorServico.excluirPorId(3);
 
         assertThrows(RecursoNaoEncontradoExcecao.class, () -> vendedorServico.buscarPorId(3));
